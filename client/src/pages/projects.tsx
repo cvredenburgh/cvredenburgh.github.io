@@ -1,70 +1,35 @@
 import { useState, useEffect } from "react";
 import { ProjectCard } from "@/components/projects/project-card";
 import { ReflectionCard } from "@/components/projects/reflection-card";
-import { findProjectsWithContent, fetchGitHubFileContent } from "@/lib/github-content-loader";
-import { Button } from "@/components/ui/button";
+import { loadProjects, ProjectContent } from "@/lib/project-loader";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function Projects() {
-  // Your GitHub username
-  const githubUsername = "cvredenburgh";
-  
-  // State for GitHub content
-  const [githubProjects, setGithubProjects] = useState<any[]>([]);
+  // State for markdown projects
+  const [projects, setProjects] = useState<ProjectContent[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const [selectedProjectContent, setSelectedProjectContent] = useState("");
-  const [selectedContentPath, setSelectedContentPath] = useState("");
+  const [selectedProject, setSelectedProject] = useState<ProjectContent | null>(null);
   
-  // Fetch projects from GitHub
+  // Load projects from markdown files
   useEffect(() => {
-    async function loadGitHubProjects() {
+    async function fetchProjects() {
       try {
         setLoading(true);
-        const projectsWithContent = await findProjectsWithContent(githubUsername);
-        
-        // Transform to our project format
-        const transformedProjects = projectsWithContent.map(item => ({
-          id: item.repo.id.toString(),
-          title: item.repo.name.replace(/-/g, ' ').replace(/_/g, ' ')
-            .split(' ')
-            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(' '),
-          description: item.repo.description || "No description available",
-          githubUrl: item.repo.html_url,
-          demoUrl: item.repo.homepage || undefined,
-          tags: [item.repo.language].filter(Boolean) as string[],
-          contentFiles: item.contentFiles
-        }));
-        
-        setGithubProjects(transformedProjects);
+        const projectData = await loadProjects();
+        setProjects(projectData);
       } catch (err) {
-        console.error("Error loading GitHub projects:", err);
-        setError("Failed to load projects from GitHub");
+        console.error("Error loading projects:", err);
+        setError("Failed to load projects from content directory");
       } finally {
         setLoading(false);
       }
     }
     
-    loadGitHubProjects();
-  }, [githubUsername]);
+    fetchProjects();
+  }, []);
   
-  // Load content when a file is selected
-  const loadProjectContent = async (repoName: string, filePath: string) => {
-    try {
-      setLoading(true);
-      const content = await fetchGitHubFileContent(githubUsername, repoName, filePath);
-      setSelectedProjectContent(content);
-      setSelectedContentPath(filePath);
-    } catch (err) {
-      console.error("Error loading project content:", err);
-      setError("Failed to load content from GitHub");
-    } finally {
-      setLoading(false);
-    }
-  };
-  
-  // Fallback projects to show when GitHub API fails or while loading
+  // Fallback projects to show when loading fails
   const fallbackProjects = [
     {
       id: "1",
@@ -92,62 +57,50 @@ export default function Projects() {
           Projects & Reflections
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl">
-          Here are my projects from GitHub. I create markdown or HTML files in my repositories 
-          to showcase my work directly from GitHub.
+          Here are my projects. I add new projects by creating markdown files in the 
+          content/projects directory of this website.
         </p>
       </section>
 
       {error && (
         <div className="bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-200 p-4 rounded-md mb-6">
           <p>{error}</p>
-          <p className="text-sm mt-2">Showing fallback projects until GitHub connection is restored.</p>
+          <p className="text-sm mt-2">Showing fallback projects until content can be loaded.</p>
         </div>
       )}
 
       <section>
         <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-          GitHub Projects
+          Featured Projects
         </h2>
         
         {loading && <p className="text-gray-600 dark:text-gray-400">Loading projects...</p>}
         
         <div className="grid gap-8 md:grid-cols-2">
-          {(githubProjects.length > 0 ? githubProjects : fallbackProjects).map(project => (
-            <div key={project.id}>
-              <ProjectCard project={project} />
-              
-              {/* Show content files if available */}
-              {project.contentFiles && project.contentFiles.length > 0 && (
-                <div className="mt-3 space-y-2">
-                  <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                    Project Content:
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {project.contentFiles.map((file: any) => (
-                      <Button
-                        key={file.sha}
-                        variant="outline"
-                        size="sm"
-                        onClick={() => loadProjectContent(project.title.replace(/\s+/g, '-').toLowerCase(), file.path)}
-                        className={selectedContentPath === file.path ? "bg-primary/20" : ""}
-                      >
-                        {file.name}
-                      </Button>
-                    ))}
-                  </div>
-                </div>
-              )}
+          {(projects.length > 0 ? projects : fallbackProjects).map(project => (
+            <div key={project.id} onClick={() => setSelectedProject(project as any)} className="cursor-pointer">
+              <ProjectCard 
+                project={{
+                  id: project.id,
+                  title: project.title,
+                  description: project.description,
+                  githubUrl: project.githubUrl,
+                  demoUrl: project.demoUrl,
+                  tags: project.tags
+                }} 
+              />
             </div>
           ))}
         </div>
         
-        {/* Show selected content */}
-        {selectedProjectContent && (
+        {/* Show selected project content */}
+        {selectedProject && (
           <Card className="mt-8">
             <CardContent className="pt-6">
+              <h2 className="text-2xl font-bold mb-4">{selectedProject.title}</h2>
               <div 
                 className="prose dark:prose-invert max-w-none"
-                dangerouslySetInnerHTML={{ __html: selectedProjectContent }}
+                dangerouslySetInnerHTML={{ __html: selectedProject.content }}
               />
             </CardContent>
           </Card>
