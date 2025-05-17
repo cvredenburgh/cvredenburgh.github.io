@@ -25,33 +25,33 @@ export function Header() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/">
-              <a className="text-xl font-semibold text-primary dark:text-blue-400">
-                Alex Smith
-              </a>
+              <div className="text-xl font-semibold text-primary dark:text-blue-400 cursor-pointer">
+                Your Name
+              </div>
             </Link>
           </div>
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link href="/">
-              <a className={`font-medium ${isActive("/") ? "text-primary dark:text-blue-400" : "text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400"}`}>
+              <div className={`font-medium cursor-pointer ${isActive("/") ? "text-primary dark:text-blue-400" : "text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400"}`}>
                 Home
-              </a>
+              </div>
             </Link>
             <Link href="/projects">
-              <a className={`font-medium ${isActive("/projects") ? "text-primary dark:text-blue-400" : "text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400"}`}>
+              <div className={`font-medium cursor-pointer ${isActive("/projects") ? "text-primary dark:text-blue-400" : "text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400"}`}>
                 Projects
-              </a>
+              </div>
             </Link>
             <Link href="/about">
-              <a className={`font-medium ${isActive("/about") ? "text-primary dark:text-blue-400" : "text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400"}`}>
+              <div className={`font-medium cursor-pointer ${isActive("/about") ? "text-primary dark:text-blue-400" : "text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400"}`}>
                 About
-              </a>
+              </div>
             </Link>
             <Link href="/contact">
-              <a className={`font-medium ${isActive("/contact") ? "text-primary dark:text-blue-400" : "text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400"}`}>
+              <div className={`font-medium cursor-pointer ${isActive("/contact") ? "text-primary dark:text-blue-400" : "text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400"}`}>
                 Contact
-              </a>
+              </div>
             </Link>
           </nav>
           
@@ -74,36 +74,36 @@ export function Header() {
         <div className="md:hidden bg-white dark:bg-gray-900 shadow-md">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <Link href="/">
-              <a 
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary dark:hover:text-blue-400"
+              <div 
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary dark:hover:text-blue-400 cursor-pointer"
                 onClick={closeMenu}
               >
                 Home
-              </a>
+              </div>
             </Link>
             <Link href="/projects">
-              <a 
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary dark:hover:text-blue-400"
+              <div 
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary dark:hover:text-blue-400 cursor-pointer"
                 onClick={closeMenu}
               >
                 Projects
-              </a>
+              </div>
             </Link>
             <Link href="/about">
-              <a 
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary dark:hover:text-blue-400"
+              <div 
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary dark:hover:text-blue-400 cursor-pointer"
                 onClick={closeMenu}
               >
                 About
-              </a>
+              </div>
             </Link>
             <Link href="/contact">
-              <a 
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary dark:hover:text-blue-400"
+              <div 
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary dark:hover:text-blue-400 cursor-pointer"
                 onClick={closeMenu}
               >
                 Contact
-              </a>
+              </div>
             </Link>
           </div>
         </div>

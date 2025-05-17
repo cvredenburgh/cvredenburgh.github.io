@@ -15,6 +15,27 @@ export default function Contact() {
     message: ""
   });
 
+  // Contact information - you can edit these with your actual info
+  const contactInfo = {
+    email: "your.email@example.com",
+    linkedin: {
+      url: "https://linkedin.com/in/yourprofile",
+      username: "yourprofile"
+    },
+    twitter: {
+      url: "https://twitter.com/yourhandle",
+      username: "@yourhandle"
+    },
+    github: {
+      url: "https://github.com/yourusername",
+      username: "yourusername"
+    },
+    instagram: {
+      url: "https://instagram.com/yourhandle",
+      username: "@yourhandle"
+    }
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -51,8 +72,7 @@ export default function Contact() {
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl">
           Feel free to reach out to me through any of the channels below. 
-          I'm always open to discussing new projects, collaborations, or just 
-          having a conversation about technology.
+          I'm always open to connecting and having a conversation.
         </p>
       </section>
 
@@ -64,7 +84,7 @@ export default function Contact() {
           
           <div className="space-y-4">
             <a 
-              href="mailto:alex@example.com" 
+              href={`mailto:${contactInfo.email}`} 
               className="flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition"
             >
               <div className="flex-shrink-0 h-10 w-10 flex items-center justify-center bg-primary rounded-full">
@@ -72,12 +92,12 @@ export default function Contact() {
               </div>
               <div className="ml-4">
                 <h3 className="text-lg font-medium text-gray-900 dark:text-white">Email</h3>
-                <p className="text-gray-600 dark:text-gray-400">alex@example.com</p>
+                <p className="text-gray-600 dark:text-gray-400">{contactInfo.email}</p>
               </div>
             </a>
             
             <a 
-              href="https://linkedin.com/in/alexsmith" 
+              href={contactInfo.linkedin.url} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition"
@@ -87,12 +107,12 @@ export default function Contact() {
               </div>
               <div className="ml-4">
                 <h3 className="text-lg font-medium text-gray-900 dark:text-white">LinkedIn</h3>
-                <p className="text-gray-600 dark:text-gray-400">linkedin.com/in/alexsmith</p>
+                <p className="text-gray-600 dark:text-gray-400">linkedin.com/in/{contactInfo.linkedin.username}</p>
               </div>
             </a>
             
             <a 
-              href="https://twitter.com/alexsmith" 
+              href={contactInfo.twitter.url} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition"
@@ -102,12 +122,12 @@ export default function Contact() {
               </div>
               <div className="ml-4">
                 <h3 className="text-lg font-medium text-gray-900 dark:text-white">Twitter/X</h3>
-                <p className="text-gray-600 dark:text-gray-400">@alexsmith</p>
+                <p className="text-gray-600 dark:text-gray-400">{contactInfo.twitter.username}</p>
               </div>
             </a>
             
             <a 
-              href="https://github.com/alexsmith" 
+              href={contactInfo.github.url} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition"
@@ -117,12 +137,12 @@ export default function Contact() {
               </div>
               <div className="ml-4">
                 <h3 className="text-lg font-medium text-gray-900 dark:text-white">GitHub</h3>
-                <p className="text-gray-600 dark:text-gray-400">github.com/alexsmith</p>
+                <p className="text-gray-600 dark:text-gray-400">github.com/{contactInfo.github.username}</p>
               </div>
             </a>
             
             <a 
-              href="https://instagram.com/alexsmith" 
+              href={contactInfo.instagram.url} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition"
@@ -132,7 +152,7 @@ export default function Contact() {
               </div>
               <div className="ml-4">
                 <h3 className="text-lg font-medium text-gray-900 dark:text-white">Instagram</h3>
-                <p className="text-gray-600 dark:text-gray-400">@alexsmith</p>
+                <p className="text-gray-600 dark:text-gray-400">{contactInfo.instagram.username}</p>
               </div>
             </a>
           </div>

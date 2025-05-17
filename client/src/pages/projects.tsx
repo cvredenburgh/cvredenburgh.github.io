@@ -1,8 +1,24 @@
-import { projects, reflections } from "@/lib/project-data";
 import { ProjectCard } from "@/components/projects/project-card";
 import { ReflectionCard } from "@/components/projects/reflection-card";
 
 export default function Projects() {
+  // Blank project template
+  const blankProject = {
+    id: "template",
+    title: "Project Title",
+    description: "This is where you can add your project description. Describe what you built, the technologies used, and what you learned.",
+    githubUrl: "#",
+    tags: ["Tag1", "Tag2", "Tag3"]
+  };
+
+  // Blank reflection template
+  const blankReflection = {
+    id: "template",
+    title: "Reflection Title",
+    excerpt: "This is where you can add your thoughts and reflections about your work, learning experiences, or insights.",
+    url: "#"
+  };
+
   return (
     <div className="space-y-8">
       <section className="mb-12">
@@ -10,8 +26,7 @@ export default function Projects() {
           Projects & Reflections
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl">
-          Here are some of my recent projects and reflections on my development journey. 
-          I regularly update this from my GitHub repositories.
+          Here are some of my projects and reflections. This section will be updated with my work.
         </p>
       </section>
 
@@ -21,9 +36,7 @@ export default function Projects() {
         </h2>
         
         <div className="grid gap-8 md:grid-cols-2">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
+          <ProjectCard project={blankProject} />
         </div>
 
         <div className="mt-12">
@@ -32,9 +45,7 @@ export default function Projects() {
           </h2>
           
           <div className="space-y-6">
-            {reflections.map((reflection) => (
-              <ReflectionCard key={reflection.id} reflection={reflection} />
-            ))}
+            <ReflectionCard reflection={blankReflection} />
           </div>
         </div>
       </section>
