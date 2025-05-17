@@ -26,7 +26,7 @@ export function Header() {
           <div className="flex items-center">
             <Link href="/">
               <div className="text-xl font-semibold text-primary dark:text-blue-400 cursor-pointer">
-                Your Name
+                Chris Vredenburgh
               </div>
             </Link>
           </div>

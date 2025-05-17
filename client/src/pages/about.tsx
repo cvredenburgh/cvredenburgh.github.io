@@ -7,21 +7,25 @@ export default function About() {
         </h1>
         <div className="flex flex-col md:flex-row gap-8">
           <div className="md:w-1/3">
-            <img 
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=600" 
-              alt="Profile" 
-              className="rounded-lg shadow-md w-full" 
+            <img
+              src="/me_white_sands.jpeg"
+              alt="Profile"
+              className="rounded-lg shadow-md w-full"
             />
           </div>
           <div className="md:w-2/3">
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-              Welcome to my personal blog! This is where I share my thoughts, experiences, and interests with the world.
+              Welcome to my personal blog! This is where I share my thoughts,
+              experiences, and interests with the world.
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-              I'm passionate about [your interests], and I've created this space to document my journey and connect with like-minded individuals.
+              I'm passionate about [your interests], and I've created this space
+              to document my journey and connect with like-minded individuals.
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-400">
-              When I'm not [your activity], you can find me [your other activities]. Feel free to browse through my projects and get in touch if you'd like to connect!
+              When I'm not [your activity], you can find me [your other
+              activities]. Feel free to browse through my projects and get in
+              touch if you'd like to connect!
             </p>
           </div>
         </div>

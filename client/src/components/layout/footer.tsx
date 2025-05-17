@@ -14,7 +14,7 @@ export function Footer() {
           </div>
           <div className="flex space-x-4">
             <a
-              href="https://linkedin.com/in/alexsmith"
+              href="https://www.linkedin.com/in/chrisvredenburgh/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-400"
@@ -23,7 +23,7 @@ export function Footer() {
               <FaLinkedinIn className="h-5 w-5" />
             </a>
             <a
-              href="https://twitter.com/alexsmith"
+              href="https://twitter.com/c_vredenburgh"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-400"
@@ -32,7 +32,7 @@ export function Footer() {
               <FaTwitter className="h-5 w-5" />
             </a>
             <a
-              href="https://github.com/alexsmith"
+              href="https://github.com/cvredenburgh"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-400"
@@ -41,7 +41,7 @@ export function Footer() {
               <FaGithub className="h-5 w-5" />
             </a>
             <a
-              href="https://instagram.com/alexsmith"
+              href="https://instagram.com/chrisvredenburgh"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-400"
@@ -51,7 +51,7 @@ export function Footer() {
             </a>
           </div>
         </div>
-        
+
         <div className="mt-6 flex justify-center">
           <ThemeToggle />
         </div>
