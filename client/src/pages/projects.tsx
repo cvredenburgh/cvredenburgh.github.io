@@ -4,6 +4,16 @@ import { ReflectionCard } from "@/components/projects/reflection-card";
 import { loadProjects, ProjectContent } from "@/lib/project-loader";
 import { Card, CardContent } from "@/components/ui/card";
 
+// Update this interface to match the expected props in ProjectCard
+interface DisplayProject {
+  id: string;
+  title: string;
+  description: string;
+  githubUrl: string;
+  demoUrl?: string;
+  tags: string[];
+}
+
 export default function Projects() {
   // State for markdown projects
   const [projects, setProjects] = useState<ProjectContent[]>([]);
@@ -30,12 +40,13 @@ export default function Projects() {
   }, []);
   
   // Fallback projects to show when loading fails
-  const fallbackProjects = [
+  const fallbackProjects: DisplayProject[] = [
     {
       id: "1",
       title: "Personal Blog Website",
       description: "A personal blogging website built with React and Tailwind CSS that features a dark mode toggle, project showcase, and contact form.",
       githubUrl: "https://github.com/cvredenburgh/personal-blog",
+      demoUrl: "https://blog.example.com",
       tags: ["React", "Tailwind CSS", "TypeScript"]
     }
   ];
@@ -49,6 +60,16 @@ export default function Projects() {
       url: "#"
     }
   ];
+  
+  // Convert projects to display format
+  const displayProjects: DisplayProject[] = projects.map(p => ({
+    id: p.id,
+    title: p.title,
+    description: p.description,
+    githubUrl: p.githubUrl,
+    demoUrl: p.demoUrl,
+    tags: p.tags
+  }));
 
   return (
     <div className="space-y-8">
@@ -77,18 +98,17 @@ export default function Projects() {
         {loading && <p className="text-gray-600 dark:text-gray-400">Loading projects...</p>}
         
         <div className="grid gap-8 md:grid-cols-2">
-          {(projects.length > 0 ? projects : fallbackProjects).map(project => (
-            <div key={project.id} onClick={() => setSelectedProject(project as any)} className="cursor-pointer">
-              <ProjectCard 
-                project={{
-                  id: project.id,
-                  title: project.title,
-                  description: project.description,
-                  githubUrl: project.githubUrl,
-                  demoUrl: project.demoUrl,
-                  tags: project.tags
-                }} 
-              />
+          {(displayProjects.length > 0 ? displayProjects : fallbackProjects).map(project => (
+            <div 
+              key={project.id} 
+              onClick={() => {
+                // Find the full project with content
+                const fullProject = projects.find(p => p.id === project.id);
+                setSelectedProject(fullProject || null);
+              }} 
+              className="cursor-pointer"
+            >
+              <ProjectCard project={project} />
             </div>
           ))}
         </div>
