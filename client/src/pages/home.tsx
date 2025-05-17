@@ -14,13 +14,13 @@ export default function Home() {
         </p>
         <div className="mt-8">
           <Link href="/projects">
-            <a>
+            <div>
               <Button 
                 className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
               >
                 View My Projects
               </Button>
-            </a>
+            </div>
           </Link>
         </div>
       </section>
