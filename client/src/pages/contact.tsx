@@ -79,8 +79,7 @@ export default function Contact() {
           Links & Contact
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl">
-          Feel free to reach out to me through any of the channels below. I'm
-          always open to connecting and having a conversation.
+          Feel free to reach out to me through any of the linked channels! I'm always happy to connect with new people and discuss interesting topics.
         </p>
       </section>
 
