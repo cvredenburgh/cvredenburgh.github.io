@@ -15,17 +15,13 @@ export default function About() {
           </div>
           <div className="md:w-2/3">
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-              Welcome to my personal blog! This is where I share my thoughts,
-              experiences, and interests with the world.
+              Hello! My name is Chris Vredenburgh.  I currently live in Somerville, MA and work as Head of Data & AI at a startup in the product development space.  
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-              I'm passionate about [your interests], and I've created this space
-              to document my journey and connect with like-minded individuals.
+              My interests span cognitive science, learning (various subdisciplines), skiing, sailing, and building things with others.  I created this site to share reflections with others and algorithms, and connect with like-minded individuals!  I'll be adding more content over time, so be sure to check back...
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-400">
-              When I'm not [your activity], you can find me [your other
-              activities]. Feel free to browse through my projects and get in
-              touch if you'd like to connect!
+              When I'm not reading, parenting, or building a project, you can find me skiing, sailing, or trail running! 
             </p>
           </div>
         </div>
