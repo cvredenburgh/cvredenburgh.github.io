@@ -9,7 +9,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <p className="text-gray-600 dark:text-gray-400">
-              &copy; {new Date().getFullYear()} Alex Smith. All rights reserved.
+              &copy; {new Date().getFullYear()} Chris Vredenburgh. All rights reserved.
             </p>
           </div>
           <div className="flex space-x-4">
