@@ -81,8 +81,7 @@ export default function Projects() {
           Projects & Reflections
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl">
-          I'll be adding projects here! I add new projects by creating markdown
-          files in the content/projects directory of this website.
+          I'll be adding projects here!
         </p>
       </section>
 
