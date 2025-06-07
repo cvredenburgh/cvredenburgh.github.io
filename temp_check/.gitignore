@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# python 
+__pycache__/
+*.py[cod]
+
+# logs
+*.log
+
+# node
+node_modules/
+
+# build
+dist/
+build/
