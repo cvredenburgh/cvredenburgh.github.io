@@ -22,10 +22,10 @@ export default function Home() {
             Welcome to my personal blog!
           </h1>
           <p className="text-xl md:text-2xl mb-8 drop-shadow-md max-w-3xl mx-auto">
-            This is my personal blogging site where I'm sharing projects and reflections across a wide range of topics. I'll be updating this site with new content semi-regularly as time permits, so be sure to check back often!
+            This is my personal blogging site. I'll be periodically sharing projects and reflections across a wide range of topics, so be sure to check back!
           </p>
           <p className="text-lg mb-8 drop-shadow-md">
-            Feel free to explore the different sections or reach out via the connected links!
+            Feel free to explore the different sections or reach out to connect!
           </p>
           <div className="mt-8">
             <Link href="/projects">
