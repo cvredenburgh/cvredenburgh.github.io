@@ -25,6 +25,7 @@ A personal blogging website for Chris Vredenburgh that integrates with GitHub. F
 - Assets: images stored in client/public/ directory
 
 ## Recent Changes
+- 2025-06-14: Deployed projects.tsx changes: fixed closing bracket and changed "A personal" to "My personal"
 - 2025-06-07: Fixed asset reference mismatch in HTML causing blank pages
 - 2025-06-07: Restored CNAME file after deployment issues
 - 2025-06-07: Added .replitignore file with !CNAME to protect domain configuration
