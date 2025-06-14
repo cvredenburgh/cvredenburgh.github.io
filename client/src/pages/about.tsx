@@ -95,7 +95,7 @@ export default function About() {
               My interests span cognitive science, human and machine learning, skiing, sailing, reading, and building things with others.  I created this site to share reflections, connect with like-minded individuals, and just to learn about web development! I'll be adding content semi-regularly as time permits, so be sure to check back...
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-400">
-              When I'm not reading, parenting, or working on a project, you can find me skiing, sailing, trail running, or traveling! 
+              When I'm not reading, parenting, or working on a project, you can find me skiing, sailing, trail running, or traveling. 
             </p>
           </div>
         </div>

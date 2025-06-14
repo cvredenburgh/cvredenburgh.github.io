@@ -47,7 +47,7 @@ export default function Projects() {
       id: "1",
       title: "Personal Blog Website",
       description:
-        "A personal blogging website built with React and Tailwind CSS that features a dark mode toggle, project showcase, and contact form.",
+        "My personal blogging website built with React and Tailwind CSS that features a dark mode toggle, project showcase, and contact form.",
       githubUrl: "https://github.com/cvredenburgh/cvredenburgh.github.io",
       demoUrl: "https://github.com/cvredenburgh/cvredenburgh.github.io",
       tags: ["React", "Tailwind CSS", "TypeScript"],
@@ -58,7 +58,7 @@ export default function Projects() {
   const myReflections = [
     {
       id: "1",
-      title: "[Placeholder - will be adding content here soon!",
+      title: "[Placeholder - will be adding content here soon!]",
       excerpt: "[Placeholder for excepts!]",
       url: "#",
     },
