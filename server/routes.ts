@@ -31,7 +31,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Email content
       const emailData = {
         to: 'cvredenburgh@gmail.com',
-        from: 'noreply@chrisvred.com', // You can use any from address
+        from: 'cvredenburgh@gmail.com', // Use your verified email address as sender
+        replyTo: email, // Set the visitor's email as reply-to
         subject: `Contact Form: ${subject}`,
         html: `
           <h3>New Contact Form Message</h3>
@@ -62,6 +63,17 @@ This message was sent from your website contact form.
       res.json({ success: true, message: 'Email sent successfully' });
     } catch (error) {
       console.error('Error sending email:', error);
+      
+      // Log more details for debugging
+      if (error && typeof error === 'object' && 'response' in error) {
+        const sgError = error as any;
+        console.error('SendGrid error details:', {
+          code: sgError.code,
+          message: sgError.message,
+          body: sgError.response?.body
+        });
+      }
+      
       res.status(500).json({ 
         error: 'Failed to send email',
         details: error instanceof Error ? error.message : 'Unknown error'
