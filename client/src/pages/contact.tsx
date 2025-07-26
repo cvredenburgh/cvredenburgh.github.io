@@ -216,7 +216,7 @@ export default function Contact() {
 
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-            Send a Message
+            Send me a note
           </h2>
 
           <form className="space-y-4" onSubmit={handleSubmit}>
