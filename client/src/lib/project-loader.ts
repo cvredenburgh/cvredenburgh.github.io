@@ -129,7 +129,7 @@ export async function loadProjects(): Promise<ProjectContent[]> {
   try {
     // In a real app, you would fetch the list of files from the server
     // For now, we'll use a hardcoded list that includes our example
-    const projectFiles = ['example-project.md'];
+    const projectFiles = ['example-project.md', 'fine-grained-representations.md'];
     
     const projectPromises = projectFiles.map(file => processMarkdownProject(file));
     const projects = await Promise.all(projectPromises);
