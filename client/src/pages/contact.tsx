@@ -1,6 +1,5 @@
 import { useState } from "react";
 import {
-  FaEnvelope,
   FaLinkedinIn,
   FaTwitter,
   FaGithub,
@@ -52,24 +51,71 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // In a real application, you would send the form data to your backend
-    console.log("Form submitted:", formData);
+    // Validate required fields
+    if (!formData.name.trim()) {
+      alert("Please enter your name.");
+      return;
+    }
 
-    toast({
-      title: "Message Sent",
-      description: "Thank you for your message. I'll get back to you soon!",
-    });
+    if (!formData.email.trim()) {
+      alert("Please enter your email address.");
+      return;
+    }
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    if (!formData.message.trim()) {
+      alert("Please enter a message.");
+      return;
+    }
+
+    try {
+      // Send email via backend
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject || 'Contact Form Message',
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent",
+          description: "Thank you for your message. I'll get back to you soon!",
+        });
+
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast({
+        title: "Error",
+        description: "Sorry, there was an error sending your message. Please try again or contact me directly.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -90,23 +136,6 @@ export default function Contact() {
           </h2>
 
           <div className="space-y-4">
-            <a
-              href={`mailto:${contactInfo.email}`}
-              className="flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition"
-            >
-              <div className="flex-shrink-0 h-10 w-10 flex items-center justify-center bg-primary rounded-full">
-                <FaEnvelope className="text-white" />
-              </div>
-              <div className="ml-4">
-                <h3 className="text-lg font-medium text-gray-900 dark:text-white">
-                  Email
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {contactInfo.email}
-                </p>
-              </div>
-            </a>
-
             <a
               href={contactInfo.linkedin.url}
               target="_blank"

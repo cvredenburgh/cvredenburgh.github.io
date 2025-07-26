@@ -15,7 +15,7 @@ export default function Home() {
     "trail runner",
     "skier",
     "sailor (kind of)",
-    "family cook",
+    "(unpaid) family cook",
     "reader & thinker",
     "dog & cat appreciator"
   ];
