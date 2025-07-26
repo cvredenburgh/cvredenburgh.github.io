@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Build projects from markdown files first
+echo "Building projects from markdown files..."
+node scripts/build-projects.js
+
 # Build the project
 npm run build
 

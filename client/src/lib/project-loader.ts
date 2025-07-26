@@ -206,8 +206,19 @@ const processMarkdownProject = async (filename: string, content?: string): Promi
 
 export async function loadProjects(): Promise<ProjectContent[]> {
   try {
-    // In a real app, you would fetch the list of files from the server
-    // For now, we'll use a hardcoded list that includes our example
+    // Try to load from pre-built JSON first (for production)
+    try {
+      const response = await fetch('/projects.json');
+      if (response.ok) {
+        const projects = await response.json();
+        console.log('Loaded projects from pre-built JSON');
+        return projects;
+      }
+    } catch (fetchError) {
+      console.log('Pre-built projects.json not found, falling back to API');
+    }
+    
+    // Fallback to API loading (for development)
     const projectFiles = ['example-project.md', 'fine-grained-representations.md'];
     
     const projectPromises = projectFiles.map(file => processMarkdownProject(file));
