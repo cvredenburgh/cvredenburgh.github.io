@@ -25,6 +25,9 @@ A personal blogging website for Chris Vredenburgh that integrates with GitHub. F
 - Assets: images stored in client/public/ directory
 
 ## Recent Changes
+- 2025-07-26: Created dedicated API server architecture for contact form (api-server.ts) to handle GitHub Pages serverless limitation
+- 2025-07-26: Fixed SendGrid email integration and deployed working contact form to production
+- 2025-07-26: Updated frontend to use external API endpoint with proper CORS configuration
 - 2025-06-14: Deployed projects.tsx changes: fixed closing bracket and changed "A personal" to "My personal"
 - 2025-06-07: Fixed asset reference mismatch in HTML causing blank pages
 - 2025-06-07: Restored CNAME file after deployment issues

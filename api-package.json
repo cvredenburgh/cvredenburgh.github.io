@@ -1,0 +1,19 @@
+{
+  "name": "contact-form-api",
+  "version": "1.0.0",
+  "description": "Dedicated API server for contact form emails",
+  "main": "api-server.ts",
+  "scripts": {
+    "start": "tsx api-server.ts",
+    "dev": "tsx api-server.ts"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^8.1.4",
+    "express": "^4.21.2",
+    "tsx": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.2"
+  }
+}
