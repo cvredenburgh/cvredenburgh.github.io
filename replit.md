@@ -25,6 +25,11 @@ A personal blogging website for Chris Vredenburgh that integrates with GitHub. F
 - Assets: images stored in client/public/ directory
 
 ## Recent Changes
+- 2025-07-26: Fixed project loading with custom frontmatter parser (resolved gray-matter Buffer issue)
+- 2025-07-26: Added 4 new projects: fine-grained representations, causal learning, distillation lessons, modern hiring
+- 2025-07-26: Removed example project and Recent Reflections section, cleaned up projects page
+- 2025-07-26: Added _redirects file to fix GitHub Pages SPA routing (404 errors on direct URLs)
+- 2025-07-26: Updated deployment process to build projects.json before deploying
 - 2025-07-26: Created dedicated API server architecture for contact form (api-server.ts) to handle GitHub Pages serverless limitation
 - 2025-07-26: Fixed SendGrid email integration and deployed working contact form to production
 - 2025-07-26: Updated frontend to use external API endpoint with proper CORS configuration
