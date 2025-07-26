@@ -40,7 +40,7 @@ export function Header() {
             </Link>
             <Link href="/projects">
               <div className={`font-medium cursor-pointer ${isActive("/projects") ? "text-primary dark:text-blue-400" : "text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400"}`}>
-                Projects
+                Projects & Writings
               </div>
             </Link>
             <Link href="/about">
@@ -86,7 +86,7 @@ export function Header() {
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary dark:hover:text-blue-400 cursor-pointer"
                 onClick={closeMenu}
               >
-                Projects
+                Projects & Writings
               </div>
             </Link>
             <Link href="/about">
