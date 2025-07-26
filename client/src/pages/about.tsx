@@ -89,13 +89,43 @@ export default function About() {
           </div>
           <div className="md:w-2/3">
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-              Hello! My name is Chris Vredenburgh.  I currently live in Somerville, MA with my wife, Gloria, and son, Augustine.  I work as Head of Data & AI at a startup in the product development space.  
+              Hello! My name is Chris Vredenburgh. I currently live in Somerville, MA with my wife, Gloria, and son, Augustine. I work as VP of Product, AI & Data at a startup product development space.
             </p>
+            
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-              My interests span cognitive science, human and machine learning, skiing, sailing, reading, and building things with others.  I created this site to share reflections, connect with like-minded individuals, and just to learn about web development! I'll be adding content semi-regularly as time permits, so be sure to check back...
+              My interests are wide but interconnected, including:
             </p>
+            <ul className="text-lg text-gray-600 dark:text-gray-400 mb-4 ml-6 space-y-1">
+              <li>• Causal statistics</li>
+              <li>• Cognitive science</li>
+              <li>• Neuroscience</li>
+              <li>• Developmental processes</li>
+              <li>• Personalization systems</li>
+              <li>• Distributed systems & production</li>
+              <li>• Machine learning</li>
+              <li>• Blockchain</li>
+              <li>• Meaning making</li>
+              <li>• How people can be productive together (collaboration)</li>
+            </ul>
+            
+            <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
+              Outside of looking at computer screens, I enjoy skiing, sailing, running, reading, and biking - preferably in beautiful places with good people.
+            </p>
+            
+            <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
+              A few personal artifacts:
+            </p>
+            <ul className="text-lg text-gray-600 dark:text-gray-400 mb-4 ml-6 space-y-2">
+              <li>• I used to do freestyle skiing.</li>
+              <li>• My interdisciplinary dissertation focused on identifying mechanistic predictors of free-flowing human collaboration via wearables and time series modeling. (At some point, I may add a summary and additional outputs.)</li>
+              <li>• I grew up in a southern Vermont town that, in my lifetime, went from a population &gt;20k to ~6.5k (still decreasing). This likely contributed to a side interest in human productivity and economics.</li>
+              <li>• I lived and worked in Montpelier, France for a year before grad school. On time off, I biked around southern France and northern Spain.</li>
+              <li>• I first began purchasing bitcoin and crypto assets in 2017, after its crash. I have largely held since.</li>
+              <li>• I believe in human agency, exposing oneself to multiple perspectives, and continuous learning.</li>
+            </ul>
+            
             <p className="text-lg text-gray-600 dark:text-gray-400">
-              When I'm not reading, parenting, or working on a project, you can find me skiing, sailing, trail running, or traveling. 
+              I will be adding my thoughts and projects of interest on this site as time permits!
             </p>
           </div>
         </div>
