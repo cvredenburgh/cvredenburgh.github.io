@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { ProjectCard } from "@/components/projects/project-card";
-import { ReflectionCard } from "@/components/projects/reflection-card";
+
 import { loadProjects, ProjectContent } from "@/lib/project-loader";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -54,15 +54,7 @@ export default function Projects() {
     },
   ];
 
-  // Sample reflections
-  const myReflections = [
-    {
-      id: "1",
-      title: "[Placeholder - will be adding content here soon!]",
-      excerpt: "[Placeholder for excepts!]",
-      url: "#",
-    },
-  ];
+
 
   // Convert projects to display format
   const displayProjects: DisplayProject[] = projects.map((p) => ({
@@ -78,10 +70,10 @@ export default function Projects() {
     <div className="space-y-8">
       <section className="mb-12">
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-          Projects & Reflections
+          Projects
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl">
-          I'll be adding projects here!
+          A collection of my research and development work across AI, machine learning, and technology.
         </p>
       </section>
 
@@ -139,17 +131,7 @@ export default function Projects() {
           </Card>
         )}
 
-        <div className="mt-12">
-          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-            Recent Reflections
-          </h2>
 
-          <div className="space-y-6">
-            {myReflections.map((reflection) => (
-              <ReflectionCard key={reflection.id} reflection={reflection} />
-            ))}
-          </div>
-        </div>
       </section>
     </div>
   );
