@@ -48,8 +48,11 @@ export default function Home() {
         {/* Content */}
         <div className="relative z-10 max-w-4xl mx-auto px-6 py-16 text-center text-white">
           <div className="mb-8">
+            <p className="text-xl md:text-2xl mb-4 drop-shadow-md max-w-3xl mx-auto">
+              Hi, I'm Chris Vredenburgh, welcome to my personal site!
+            </p>
             <p className="text-xl md:text-2xl mb-6 drop-shadow-md max-w-3xl mx-auto">
-              Hi, I'm Chris Vredenburgh, welcome to my personal site! I'm a(n){" "}
+              I'm a(n){" "}
               <span 
                 className={`inline-block transition-opacity duration-300 ${fadeClass}`}
                 style={{ minWidth: "200px", textAlign: "left" }}
