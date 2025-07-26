@@ -8,7 +8,7 @@ export default function Home() {
   
   const attributes = [
     "applied scientist",
-    "cognitive scientist",
+    "francophone",
     "builder", 
     "husband",
     "father",
@@ -16,7 +16,8 @@ export default function Home() {
     "skier",
     "sailor (kind of)",
     "family cook",
-    "reader & thinker"
+    "reader & thinker",
+    "dog & cat appreciator"
   ];
 
   useEffect(() => {
