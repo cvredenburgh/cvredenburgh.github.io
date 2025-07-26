@@ -73,7 +73,7 @@ export default function Projects() {
           Projects
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl">
-          Some WIP projects and musings
+          Below are sample projects and reflections, subject to ongoing edits as I learn more.
         </p>
       </section>
 

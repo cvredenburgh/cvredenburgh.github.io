@@ -90,11 +90,11 @@ export default function About() {
         {/* Content */}
         <div className="max-w-4xl">
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-              Hello! My name is Chris Vredenburgh. I currently live in Somerville, MA with my wife, Gloria, and son, Augustine. I work as VP of Product, AI & Data at a startup product development space.
+              Hello! My name is Chris Vredenburgh. I currently live in Somerville, MA with my wife, Gloria, and son, Augustine. I work as VP of Product, AI & Data at a startup in the product development space.
           </p>
           
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-            My interests are wide but interconnected, including:
+            My intellectual interests are wide but interconnected, including:
           </p>
           <ul className="text-lg text-gray-600 dark:text-gray-400 mb-4 ml-6 space-y-1">
               <li>• Causal statistics</li>
@@ -117,12 +117,12 @@ export default function About() {
             A few personal artifacts:
           </p>
           <ul className="text-lg text-gray-600 dark:text-gray-400 mb-4 ml-6 space-y-2">
-              <li>• I used to do freestyle skiing.</li>
-              <li>• My interdisciplinary dissertation focused on identifying mechanistic predictors of free-flowing human collaboration via wearables and time series modeling. (At some point, I may add a summary and additional outputs.)</li>
-              <li>• I grew up in a southern Vermont town that, in my lifetime, went from a population &gt;20k to ~6.5k (still decreasing). This likely contributed to a side interest in human productivity and economics.</li>
+              <li>• My interdisciplinary dissertation focused on identifying mechanistic predictors of free-flowing human collaboration via wearables and time series modeling. (At some point, I may add a summary and additional outputs!)</li>
+              <li>• I grew up in a southern Vermont town that, in my lifetime, went from a population of 20k to ~6.5k.  </li>
               <li>• I lived and worked in Montpelier, France for a year before grad school. On time off, I biked around southern France and northern Spain.</li>
-              <li>• I first began purchasing bitcoin and crypto assets in 2017, after its crash. I have largely held since.</li>
-            <li>• I believe in human agency, exposing oneself to multiple perspectives, and continuous learning.</li>
+              <li>• After reading the Bitcoin white paper, I began purchasing Bitcoin and crypto assets in 2017, following the crash. I have largely held since!</li>
+            <li>• I believe in human agency and systems with strong skin-in-the-game.</li>
+            <li>• I am a lifelong lover of skiing, particularly the glades.</li>
           </ul>
           
           <p className="text-lg text-gray-600 dark:text-gray-400">
