@@ -62,7 +62,7 @@ export default function Home() {
               </span>
             </p>
             <p className="text-lg md:text-xl drop-shadow-md max-w-3xl mx-auto">
-              As you are inclined, please check out my multidisciplinary projects and essays, About section, or connect with me on social media.
+              Feel free to explore my projects and essays, learn more in the About section, or connect with me on social media.
             </p>
           </div>
           <div className="mt-8">
