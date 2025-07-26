@@ -4,6 +4,32 @@ import { MailService } from '@sendgrid/mail';
 import { storage } from "./storage";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Serve content files (for projects) 
+  app.get('/api/content/projects/:filename', async (req, res) => {
+    try {
+      const fs = await import('fs');
+      const path = await import('path');
+      
+      const filename = req.params.filename;
+      if (!filename.endsWith('.md')) {
+        return res.status(400).send('Only markdown files allowed');
+      }
+      
+      const filePath = path.join(process.cwd(), 'content', 'projects', filename);
+      
+      if (fs.existsSync(filePath)) {
+        const content = fs.readFileSync(filePath, 'utf8');
+        res.setHeader('Content-Type', 'text/plain');
+        res.send(content);
+      } else {
+        res.status(404).send('File not found');
+      }
+    } catch (error) {
+      console.error('Error serving content file:', error);
+      res.status(500).send('Internal server error');
+    }
+  });
+
   // Contact form endpoint
   app.post('/api/contact', async (req, res) => {
     try {

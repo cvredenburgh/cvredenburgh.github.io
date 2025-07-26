@@ -1,4 +1,42 @@
-import matter from 'gray-matter';
+// Simple frontmatter parser (avoiding gray-matter due to Buffer issues in browser)
+function parseFrontmatter(content: string) {
+  const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/;
+  const match = content.match(frontmatterRegex);
+  
+  if (!match) {
+    return { data: {}, content: content };
+  }
+  
+  const [, frontmatter, markdown] = match;
+  const data: any = {};
+  
+  // Parse frontmatter line by line
+  frontmatter.split('\n').forEach(line => {
+    const colonIndex = line.indexOf(':');
+    if (colonIndex > 0) {
+      const key = line.substring(0, colonIndex).trim();
+      let value = line.substring(colonIndex + 1).trim();
+      
+      // Handle arrays (basic parsing for tags)
+      if (value.startsWith('[') && value.endsWith(']')) {
+        try {
+          data[key] = JSON.parse(value);
+        } catch {
+          data[key] = value;
+        }
+      } else {
+        // Remove quotes if present
+        if ((value.startsWith('"') && value.endsWith('"')) || 
+            (value.startsWith("'") && value.endsWith("'"))) {
+          value = value.slice(1, -1);
+        }
+        data[key] = value;
+      }
+    }
+  });
+  
+  return { data, content: markdown };
+}
 
 export interface ProjectContent {
   id: string;
@@ -23,7 +61,7 @@ interface RawProjectData {
   slug: string;
 }
 
-// For now, let's include the example project directly
+// For now, let's include projects directly
 // In a production app, you would load this from the filesystem
 const EXAMPLE_PROJECT = `---
 title: Example Project
@@ -66,24 +104,65 @@ You can also include images in your project descriptions:
 
 To add a new project, simply create a new .md file in the content/projects directory with similar metadata at the top.`;
 
+const FINE_GRAINED_PROJECT = `---
+title: Creating Relevant Fine-grained Representations with Regional Contrastive Learning
+description: . 
+tags: ["AI", "VLM", "multimodal AI", "CLiP", "regional contrastive learning", "vision language models", "visual fashion representations"]
+githubUrl: https://github.com/cvredenburgh/multimodal-concept-evaluation
+date: 2025-07-25
+---
+
+# Building a Multimodal Product Concept Evaluation Model
+
+This project built upon prior AI research leveraging specialized tag tokens to effectively drive contrastive learning to develop rich, detailed visual representations relevant to fashion consumers.  Here, I will summarize enhancements to that work, including:
+
+- Testing model architecture enhancements to improve performance
+  - Organic token pruning methodologies
+  - Relaxing tag entity-to-image region constraints
+  - Wavelet-based transformers to better detect relevant patterns
+- Techniques to assess the quality of the visual model's representations
+- Leveraging the model to evaluate product concepts
+
+🚧 *In progress – coming soon.*`;
+
 const processMarkdownProject = async (filename: string, content?: string): Promise<ProjectContent | null> => {
   try {
     let rawContent = content;
     
     if (!rawContent) {
-      // This would be used in production to fetch from server
-      // const response = await fetch(`/content/projects/${filename}`);
-      // if (!response.ok) return null;
-      // rawContent = await response.text();
-      
-      // For the example, we'll just use our embedded content
-      rawContent = EXAMPLE_PROJECT;
+      // Try to fetch from server first
+      try {
+        const response = await fetch(`/api/content/projects/${filename}`);
+        if (response.ok) {
+          rawContent = await response.text();
+        } else {
+          // If file doesn't exist, use embedded content for known projects
+          if (filename === 'example-project.md') {
+            rawContent = EXAMPLE_PROJECT;
+          } else if (filename === 'fine-grained-representations.md') {
+            rawContent = FINE_GRAINED_PROJECT;
+          } else {
+            console.warn(`Project file ${filename} not found`);
+            return null;
+          }
+        }
+      } catch (fetchError) {
+        // If fetch fails, use embedded content for known projects
+        if (filename === 'example-project.md') {
+          rawContent = EXAMPLE_PROJECT;
+        } else if (filename === 'fine-grained-representations.md') {
+          rawContent = FINE_GRAINED_PROJECT;
+        } else {
+          console.warn(`Failed to fetch project file ${filename}`);
+          return null;
+        }
+      }
     }
     
     const slug = filename.replace(/\.md$/, '');
     
-    // Use gray-matter to parse the project metadata
-    const { data, content: markdownContent } = matter(rawContent);
+    // Use custom frontmatter parser (gray-matter has Buffer issues in browser)
+    const { data, content: markdownContent } = parseFrontmatter(rawContent);
     
     // Simple markdown to HTML conversion
     const htmlContent = markdownContent
