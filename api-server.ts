@@ -12,7 +12,7 @@ app.use((req, res, next) => {
   const allowedOrigins = ['https://chrisvred.com', 'http://localhost:5173', 'http://localhost:5000'];
   const origin = req.headers.origin;
   
-  if (allowedOrigins.includes(origin)) {
+  if (origin && allowedOrigins.includes(origin)) {
     res.setHeader('Access-Control-Allow-Origin', origin);
   }
   
