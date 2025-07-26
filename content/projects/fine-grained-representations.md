@@ -1,6 +1,6 @@
 ---
 title: Regional Contrastive Learning for Visual Product Concepts
-description: Improving visual product representation through contrastive learning with regional grounding in fashion datasets.
+description: Improving visual product representation through contrastive learning with regional grounding.
 tags: ["AI", "contrastive learning", "vision-language", "product modeling", "representation learning"]
 githubUrl: https://github.com/cvredenburgh/multimodal-concept-evaluation
 date: 2025-07-25

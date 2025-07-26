@@ -17,7 +17,7 @@
   {
     "id": "distillation-lessons",
     "title": "Model Distillation & 'New Information Theory'",
-    "description": "Exploring how insights from LLM distillation and fine-tuning can support a new theory of information for deep learning.",
+    "description": "Exploring insights from LLM distillation and fine-tuning for the emerging 'new information theory' for deep learning.",
     "tags": [
       "AI",
       "LLM",
@@ -32,7 +32,7 @@
   {
     "id": "fine-grained-representations",
     "title": "Regional Contrastive Learning for Visual Product Concepts",
-    "description": "Improving visual product representation through contrastive learning with regional grounding in fashion datasets.",
+    "description": "Improving visual product representation through contrastive learning with regional grounding.",
     "tags": [
       "AI",
       "contrastive learning",
@@ -47,8 +47,8 @@
   },
   {
     "id": "modern-hiring",
-    "title": "On the Limitations of Interviewing",
-    "description": "Reflections on how modern hiring practices fall short and what behavioral science reveals about the limits of interviews.",
+    "title": "On the Limitations of Interviews",
+    "description": "Reflections on modern hiring practices, what research says, and the implications for organizations.",
     "tags": [
       "hiring",
       "talent",
@@ -57,7 +57,7 @@
     ],
     "githubUrl": "https://github.com/cvredenburgh/modern-hiring",
     "date": "2025-07-25T00:00:00.000Z",
-    "content": "<div class=\"prose max-w-none\"><p><h1>On the Limitations of Interviewing</h1></p><p><br>🚧 Write-up in progress — early draft expected August 2025.</p></div>",
+    "content": "<div class=\"prose max-w-none\"><p><h1>On the Limitations of Interviews</h1></p><p><br>🚧 Write-up in progress — early draft expected August 2025.</p></div>",
     "slug": "modern-hiring"
   }
 ]

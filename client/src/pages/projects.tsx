@@ -73,7 +73,7 @@ export default function Projects() {
           Projects
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl">
-          A collection of my research and development work across AI, machine learning, and technology.
+          Some WIP projects and musings
         </p>
       </section>
 
