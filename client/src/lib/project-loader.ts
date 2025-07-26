@@ -219,7 +219,12 @@ export async function loadProjects(): Promise<ProjectContent[]> {
     }
     
     // Fallback to API loading (for development)
-    const projectFiles = ['example-project.md', 'fine-grained-representations.md'];
+    const projectFiles = [
+      'fine-grained-representations.md',
+      'causal-learning-from-latent-space-representations.md',
+      'distillation-lessons.md', 
+      'modern-hiring.md'
+    ];
     
     const projectPromises = projectFiles.map(file => processMarkdownProject(file));
     const projects = await Promise.all(projectPromises);

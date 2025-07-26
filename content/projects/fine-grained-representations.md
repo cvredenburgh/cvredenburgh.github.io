@@ -1,14 +1,14 @@
 ---
-title: Creating Relevant Fine-grained Representations with Regional Contrastive Learning
-description: . 
-tags: ["AI", "VLM", "multimodal AI", "CLiP", "regional contrastive learning", "vision language models", "visual fashion representations"]
+title: Regional Contrastive Learning for Visual Product Concepts
+description: Improving visual product representation through contrastive learning with regional grounding in fashion datasets.
+tags: ["AI", "contrastive learning", "vision-language", "product modeling", "representation learning"]
 githubUrl: https://github.com/cvredenburgh/multimodal-concept-evaluation
 date: 2025-07-25
 ---
 
-# Building a Multimodal Product Concept Evaluation Model
+# Regional Contrastive Learning for Visual Product Concepts
 
-This project built upon prior AI research leveraging specialized tag tokens to effectively drive contrastive learning to develop rich, detailed visual representations relevant to fashion consumers.  Here, I will summarize enhancements to that work, including:
+This project builds on earlier research in multimodal product modeling. It explores ways to enhance visual representation quality for fashion products by refining contrastive learning methods, token alignment, and evaluating latent visual relevance.
 
 - Testing model architecture enhancements to improve performance
   - Organic token pruning methodologies
