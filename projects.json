@@ -1,35 +1,63 @@
 [
   {
-    "id": "fine-grained-representations",
-    "title": "Creating Relevant Fine-grained Representations with Regional Contrastive Learning",
-    "description": ".",
+    "id": "causal-learning-from-latent-space-representations",
+    "title": "Causal Learning From Rich Vision Language Model (VLM) Representations",
+    "description": "Investigating how rich latent representations from vision-language models (VLMs) can be leveraged for causal learning.",
     "tags": [
       "AI",
       "VLM",
-      "multimodal AI",
-      "CLiP",
-      "regional contrastive learning",
-      "vision language models",
-      "visual fashion representations"
+      "causal modeling",
+      "foundation models"
+    ],
+    "githubUrl": "https://github.com/cvredenburgh/concept-mining",
+    "date": "2025-07-25T00:00:00.000Z",
+    "content": "<div class=\"prose max-w-none\"><p><h1>Causal Learning From Rich Vision Language Model (VLM) Representations</h1></p><p>This project builds on prior work using rich VLM representations (e.g. CLIP) for product understanding. I explore how these embeddings can be used for causal modeling — through attribution analysis, latent mining, and targeted counterfactual generation.</p><p>🚧 <em>In progress – coming soon.</em></p></div>",
+    "slug": "causal-learning-from-latent-space-representations"
+  },
+  {
+    "id": "distillation-lessons",
+    "title": "Model Distillation & 'New Information Theory'",
+    "description": "Exploring insights from LLM distillation and fine-tuning for the emerging 'new information theory' for deep learning.",
+    "tags": [
+      "AI",
+      "LLM",
+      "distillation",
+      "fine tuning"
+    ],
+    "githubUrl": "https://github.com/cvredenburgh/distillation-info-theory",
+    "date": "2025-07-25T00:00:00.000Z",
+    "content": "<div class=\"prose max-w-none\"><p><h1>Model Distillation & 'New Information Theory'</h1></p><p><br>🚧 <em>In progress – coming September 2025.</em></p></div>",
+    "slug": "distillation-lessons"
+  },
+  {
+    "id": "fine-grained-representations",
+    "title": "Regional Contrastive Learning for Visual Product Concepts",
+    "description": "Improving visual product representation through contrastive learning with regional grounding.",
+    "tags": [
+      "AI",
+      "contrastive learning",
+      "vision-language",
+      "product modeling",
+      "representation learning"
     ],
     "githubUrl": "https://github.com/cvredenburgh/multimodal-concept-evaluation",
     "date": "2025-07-25T00:00:00.000Z",
-    "content": "<div class=\"prose max-w-none\"><p><h1>Building a Multimodal Product Concept Evaluation Model</h1></p><p>This project built upon prior AI research leveraging specialized tag tokens to effectively drive contrastive learning to develop rich, detailed visual representations relevant to fashion consumers.  Here, I will summarize enhancements to that work, including:</p><p>- Testing model architecture enhancements to improve performance<br>  - Organic token pruning methodologies<br>  - Relaxing tag entity-to-image region constraints<br>  - Wavelet-based transformers to better detect relevant patterns<br>- Techniques to assess the quality of the visual model's representations<br>- Leveraging the model to evaluate product concepts</p><p>🚧 <em>In progress – coming soon.</em></p></div>",
+    "content": "<div class=\"prose max-w-none\"><p><h1>Regional Contrastive Learning for Visual Product Concepts</h1></p><p>This project builds on earlier research in multimodal product modeling. It explores ways to enhance visual representation quality for fashion products by refining contrastive learning methods, token alignment, and evaluating latent visual relevance.</p><p>- Testing model architecture enhancements to improve performance<br>  - Organic token pruning methodologies<br>  - Relaxing tag entity-to-image region constraints<br>  - Wavelet-based transformers to better detect relevant patterns<br>- Techniques to assess the quality of the visual model's representations<br>- Leveraging the model to evaluate product concepts</p><p>🚧 <em>In progress – coming soon.</em></p></div>",
     "slug": "fine-grained-representations"
   },
   {
-    "id": "example-project",
-    "title": "Example Project",
-    "description": "This is an example project to demonstrate how to add projects using markdown files.",
+    "id": "modern-hiring",
+    "title": "On the Limitations of Interviews",
+    "description": "Reflections on modern hiring practices, what research says, and the implications for organizations.",
     "tags": [
-      "Example",
-      "Markdown",
-      "Documentation"
+      "hiring",
+      "talent",
+      "interviewing",
+      "management"
     ],
-    "githubUrl": "https://github.com/cvredenburgh/example-project",
-    "demoUrl": "https://example-project.demo.com",
-    "date": "2023-05-15T00:00:00.000Z",
-    "content": "<div class=\"prose max-w-none\"><p><h1>Example Project</h1></p><p>This is an example project that demonstrates how to add new projects to your website by simply creating markdown files in the content/projects directory.</p><p><h2>Features</h2></p><p>- Easy to add new projects<br>- Full Markdown support<br>- Automatic display on your projects page<br>- Control over project metadata</p><p><h2>How It Works</h2></p><p>When you add a new markdown file to the content/projects directory, the website automatically detects it and displays it on your projects page. The metadata at the top (between the --- markers) provides information like the title, description, and tags.</p><p>``<code>javascript<br>// Example code can be included too<br>function hello() {<br>  console.log(\"Hello, world!\");<br>}<br></code>``</p><p><h2>Images</h2></p><p>You can also include images in your project descriptions:</p><p><img alt=\"Example Image\" src=\"https://via.placeholder.com/800x400\" class=\"max-w-full h-auto\" /></p><p><h2>Next Steps</h2></p><p>To add a new project, simply create a new .md file in the content/projects directory with similar metadata at the top.</p></div>",
-    "slug": "example-project"
+    "githubUrl": "https://github.com/cvredenburgh/modern-hiring",
+    "date": "2025-07-25T00:00:00.000Z",
+    "content": "<div class=\"prose max-w-none\"><p><h1>On the Limitations of Interviews</h1></p><p><br>🚧 Write-up in progress — early draft expected August 2025.</p></div>",
+    "slug": "modern-hiring"
   }
 ]
