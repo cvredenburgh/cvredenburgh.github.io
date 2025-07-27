@@ -2,7 +2,7 @@
   {
     "id": "causal-learning-from-latent-space-representations",
     "title": "Causal Learning From Rich Vision Language Model (VLM) Representations",
-    "description": "Investigating how rich latent representations from vision-language models (VLMs) can be leveraged for causal learning.",
+    "description": "Investigating how rich latent representations from vision-language models (VLMs) can be leveraged for causal learning. In this case, we are able to learn about how product features and design impact customer sentiment and responses.",
     "tags": [
       "AI",
       "VLM",
@@ -16,8 +16,8 @@
   },
   {
     "id": "distillation-lessons",
-    "title": "Model Distillation & 'New Information Theory'",
-    "description": "Exploring insights from LLM distillation and fine-tuning for the emerging 'new information theory' for deep learning.",
+    "title": "Model Distillation & a 'New Information Theory'",
+    "description": "Exploring insights from LLM distillation and fine-tuning for the emerging 'new information theory' of deep learning.",
     "tags": [
       "AI",
       "LLM",
@@ -26,13 +26,13 @@
     ],
     "githubUrl": "https://github.com/cvredenburgh/distillation-info-theory",
     "date": "2025-07-25T00:00:00.000Z",
-    "content": "<div class=\"prose max-w-none\"><p><h1>Model Distillation & 'New Information Theory'</h1></p><p><br>🚧 <em>In progress – coming September 2025.</em></p></div>",
+    "content": "<div class=\"prose max-w-none\"><p><h1>Model Distillation & a 'New Information Theory'</h1></p><p><br>🚧 <em>In progress – coming soon.</em></p></div>",
     "slug": "distillation-lessons"
   },
   {
     "id": "fine-grained-representations",
     "title": "Regional Contrastive Learning for Visual Product Concepts",
-    "description": "Improving visual product representation through contrastive learning with regional grounding.",
+    "description": "Improving visual product representation through contrastive learning with regional grounding. Then, the fine-grained product representations are leveraged for predicting customer sentiment and response.",
     "tags": [
       "AI",
       "contrastive learning",
@@ -47,17 +47,16 @@
   },
   {
     "id": "modern-hiring",
-    "title": "On the Limitations of Interviews",
-    "description": "Reflections on modern hiring practices, what research says, and the implications for organizations.",
+    "title": "Hiring is Active Investing: The Limits of Interviews",
+    "description": "Like active investing, hiring managers appear to rarely outperform the index.  Research on coding tests, case studies, and highly structured interviews consistently show poor job performance forecasting. I explore the implications today's ultra-lengthy hiring processes and what interviews could productively focus on.",
     "tags": [
       "hiring",
-      "talent",
-      "interviewing",
-      "management"
+      "talent management",
+      "interviewing"
     ],
     "githubUrl": "https://github.com/cvredenburgh/modern-hiring",
     "date": "2025-07-25T00:00:00.000Z",
-    "content": "<div class=\"prose max-w-none\"><p><h1>On the Limitations of Interviews</h1></p><p><br>🚧 Write-up in progress — early draft expected August 2025.</p></div>",
+    "content": "<div class=\"prose max-w-none\"><p><h1>Hiring is Active Investing: The Limits of Interviews</h1></p><p><br>🚧 Write-up in progress — coming soon.</p></div>",
     "slug": "modern-hiring"
   }
 ]
