@@ -28,7 +28,7 @@ export default function Home() {
         setCurrentAttributeIndex((prev) => (prev + 1) % attributes.length);
         setFadeClass("opacity-100");
       }, 300);
-    }, 3000);
+    }, 2250);
 
     return () => clearInterval(interval);
   }, [attributes.length]);
@@ -62,7 +62,7 @@ export default function Home() {
               </span>
             </p>
             <p className="text-lg md:text-xl drop-shadow-md max-w-3xl mx-auto">
-              Feel free to explore my projects and essays, learn more in the About section, or connect with me on social media.
+              Feel free to explore my <Link href="/projects" className="text-white underline hover:text-gray-200 transition-colors">projects and essays</Link>, <Link href="/about" className="text-white underline hover:text-gray-200 transition-colors">learn more in the About section</Link>, or <Link href="/contact" className="text-white underline hover:text-gray-200 transition-colors">connect with me on social media</Link>.
             </p>
           </div>
           <div className="mt-8">
