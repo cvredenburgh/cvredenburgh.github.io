@@ -122,7 +122,7 @@ export default function About() {
               <li>• I lived and worked in Montpelier, France for a year before grad school. On time off, I biked around southern France and northern Spain.</li>
               <li>• After reading the Bitcoin white paper, I began purchasing Bitcoin and crypto assets in 2017, following the crash. I have largely held since!</li>
             <li>• I believe in human agency and systems with strong skin-in-the-game.</li>
-            <li>• I am a lifelong lover of skiing, particularly the glades.</li>
+            <li>• I am a lifelong lover of skiing, particularly the glades and moguls!</li>
           </ul>
           
           <p className="text-lg text-gray-600 dark:text-gray-400">
