@@ -90,7 +90,7 @@ export default function About() {
         {/* Content */}
         <div className="max-w-4xl">
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-              Hello! My name is Chris Vredenburgh. I currently live in Somerville, MA with my wife, Gloria, and son, Augustine. I work as VP of Product, AI & Data at a startup in the product development space.
+              Hello! My name is Chris Vredenburgh. I currently live in Somerville, MA with my wife, Gloria, and son, Augustine. I work as VP of Product, AI & Data at a startup in the product development space.  Prior, I worked in e-commerce and the pharmaceutical industry building data ecosystems and algorithms to optimize customer targeting, engagement, and messaging.
           </p>
           
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
@@ -99,34 +99,34 @@ export default function About() {
           <ul className="text-lg text-gray-600 dark:text-gray-400 mb-4 ml-6 space-y-1">
               <li>• Causal statistics</li>
               <li>• Cognitive science</li>
+              <li>• Machine learning</li>
+              <li>• Personalization systems</li>
               <li>• Neuroscience</li>
               <li>• Developmental processes</li>
-              <li>• Personalization systems</li>
               <li>• Distributed systems & production</li>
-              <li>• Machine learning</li>
               <li>• Blockchain</li>
               <li>• Meaning making</li>
             <li>• How people can be productive together (collaboration)</li>
           </ul>
           
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-            Outside of looking at computer screens, I enjoy skiing, sailing, running, reading, and biking - preferably in beautiful places with good people.
+            Outside of looking at computer screens, I enjoy skiing, sailing, running, reading, and biking.  And I love doing those things in places with seasons.
           </p>
           
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
             A few personal artifacts:
           </p>
           <ul className="text-lg text-gray-600 dark:text-gray-400 mb-4 ml-6 space-y-2">
-              <li>• My interdisciplinary dissertation focused on identifying mechanistic predictors of free-flowing human collaboration via wearables and time series modeling. (At some point, I may add a summary and additional outputs!)</li>
-              <li>• I grew up in a southern Vermont town that, in my lifetime, went from a population of 20k to ~6.5k.  </li>
-              <li>• I lived and worked in Montpelier, France for a year before grad school. On time off, I biked around southern France and northern Spain.</li>
-              <li>• After reading the Bitcoin white paper, I began purchasing Bitcoin and crypto assets in 2017, following the crash. I have largely held since!</li>
+              <li>• My interdisciplinary dissertation focused on identifying predictors of free-flowing human collaboration via wearables, time series modeling, and capturing biological, cognitive, and environmental predictors. (At some point, I may add a summary and additional outputs!)</li>
+              <li>• I grew up in a southern Vermont town that, in my lifetime, went from a population of 20k to ~6.5k. So I know a bit about what it's like to live through economic decline!  </li>
+              <li>• I lived and worked in Montpelier, France for a year before grad school. On time off, I biked around southern France and northern Spain!</li>
+              <li>• After reading the Bitcoin white paper, I began purchasing Bitcoin and crypto assets following the crash in 2017. I have largely held since!</li>
             <li>• I believe in human agency and systems with strong skin-in-the-game.</li>
-            <li>• I am a lifelong lover of skiing, particularly the glades and moguls!</li>
+            <li>• I am a lifelong lover of skiing - a former freestyle skier who now enjoys the glades and backcountry!</li>
           </ul>
           
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            I will be adding my thoughts and projects of interest on this site as time permits!
+            As time permits, I will be adding my thoughts and projects of interest on this site.
           </p>
         </div>
       </section>
