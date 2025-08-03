@@ -2,7 +2,7 @@
   {
     "id": "causal-learning-from-latent-space-representations",
     "title": "Causal Learning From Rich Vision Language Model (VLM) Representations",
-    "description": "Investigating how rich latent representations from vision-language models (VLMs) can be leveraged for causal learning. In this case, we are able to learn about how product features and design impact customer sentiment and responses.",
+    "description": "Investigating how rich latent representations from vision-language models (VLMs) can be leveraged for causal learning. In this case, we learn about how product features and design impact customer sentiment and responses.",
     "tags": [
       "AI",
       "VLM",
@@ -17,7 +17,7 @@
   {
     "id": "distillation-lessons",
     "title": "Model Distillation & a 'New Information Theory'",
-    "description": "Exploring insights from LLM distillation and fine-tuning for the emerging 'new information theory' of deep learning.",
+    "description": "Exploring insights from LLM distillation and fine-tuning for an emerging 'new information theory' of deep learning.",
     "tags": [
       "AI",
       "LLM",
@@ -32,7 +32,7 @@
   {
     "id": "fine-grained-representations",
     "title": "Regional Contrastive Learning for Visual Product Concepts",
-    "description": "Improving visual product representation through contrastive learning with regional grounding. Then, the fine-grained product representations are leveraged for predicting customer sentiment and response.",
+    "description": "Improving product representations through contrastive learning with optimized regional grounding. Then, the fine-grained product representations are leveraged for predicting customer sentiment and response.",
     "tags": [
       "AI",
       "contrastive learning",
@@ -47,8 +47,8 @@
   },
   {
     "id": "modern-hiring",
-    "title": "Hiring is Active Investing: The Limits of Modern Interviews",
-    "description": "Similar to active investing, research shows hiring managers rarely outperform the index.  For example,  case studies, coding evaluations, and highly structured interviews consistently show very poor job performance forecasting. I explore the implications for today's ultra-lengthy hiring processes, and what productive interview cycles could instead focus on (from both sides).",
+    "title": "Hiring is Active Investing: Reflecting on Evidence of the Limits of Structured Interviews",
+    "description": "Similar to active investing, research shows hiring managers rarely outperform the index. For example, case study evaluations, coding evaluation scores, and other highly structured interviews consistently show very poor job performance forecasting. I explore the implications for today's ultra-lengthy hiring processes, and what productive interview cycles could instead focus on (from both sides).",
     "tags": [
       "hiring",
       "talent management",
@@ -56,7 +56,7 @@
     ],
     "githubUrl": "https://github.com/cvredenburgh/modern-hiring",
     "date": "2025-07-25T00:00:00.000Z",
-    "content": "<div class=\"prose max-w-none\"><p><h1>Hiring is Active Investing: The Limits of Interviews</h1></p><p><br>🚧 Write-up in progress — coming soon.</p></div>",
+    "content": "<div class=\"prose max-w-none\"><p><h1>Hiring is Active Investing: Reflecting on Evidence of the Limits of Structured Interviews</h1></p><p><br>🚧 Write-up in progress — coming soon.</p></div>",
     "slug": "modern-hiring"
   }
 ]
