@@ -1,6 +1,6 @@
 ---
 title: Causal Learning From Rich Vision Language Model (VLM) Representations
-description: Investigating how rich latent representations from vision-language models (VLMs) can be leveraged for causal learning. In this case, we are able to learn about how product features and design impact customer sentiment and responses.
+description: Investigating how rich latent representations from vision-language models (VLMs) can be leveraged for causal learning. In this case, we learn about how product features and design impact customer sentiment and responses.
 tags: ["AI", "VLM", "causal modeling", "foundation models"]
 githubUrl: https://github.com/cvredenburgh/concept-mining
 date: 2025-07-25

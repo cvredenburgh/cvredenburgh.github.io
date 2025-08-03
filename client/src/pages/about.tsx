@@ -90,7 +90,7 @@ export default function About() {
         {/* Content */}
         <div className="max-w-4xl">
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-              Hello! My name is Chris Vredenburgh. I currently live in Somerville, MA with my wife, Gloria, and son, Augustine. I work as VP of Product, AI & Data at a startup in the product development space.  Prior, I worked in e-commerce and the pharmaceutical industry building data ecosystems and algorithms to optimize customer targeting, engagement, and messaging.
+              Hello! My name is Chris Vredenburgh. I currently live in Somerville, MA with my wife, Gloria, and son, Augustine. I work as VP of Artificial Intelligence & Product at a startup in the product development space.  Prior, I worked in e-commerce and the pharmaceutical industry building data ecosystems and algorithms to optimize customer engagement and operations.
           </p>
           
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
@@ -110,23 +110,23 @@ export default function About() {
           </ul>
           
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-            Outside of looking at computer screens, I enjoy skiing, sailing, running, reading, and biking.  And I love doing those things in places with seasons.
+            Outside of looking at computer screens, I enjoy skiing, sailing, running, reading, and biking.  And I generally prefer doing those things in places with seasons.
           </p>
           
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
             A few personal artifacts:
           </p>
           <ul className="text-lg text-gray-600 dark:text-gray-400 mb-4 ml-6 space-y-2">
-              <li>• My interdisciplinary dissertation focused on identifying predictors of free-flowing human collaboration via wearables, time series modeling, and capturing biological, cognitive, and environmental predictors. (At some point, I may add a summary and additional outputs!)</li>
-              <li>• I grew up in a southern Vermont town that, in my lifetime, went from a population of 20k to ~6.5k. So I know a bit about what it's like to live through economic decline!  </li>
-              <li>• I lived and worked in Montpelier, France for a year before grad school. On time off, I biked around southern France and northern Spain!</li>
-              <li>• After reading the Bitcoin white paper, I began purchasing Bitcoin and crypto assets following the crash in 2017. I have largely held since!</li>
-            <li>• I believe in human agency and systems with strong skin-in-the-game.</li>
-            <li>• I am a lifelong lover of skiing - a former freestyle skier who now enjoys the glades and backcountry!</li>
+              <li>• My interdisciplinary dissertation identified biological, cognitive, and environmental predictors of free-flowing human collaboration via wearables and time series modeling. (At some point, I may add a summary and additional outputs!)</li>
+              <li>• I grew up in a southern Vermont town that, in my lifetime, went from a population of 20k to ~6.5k. So I know a bit about what it's like to live through economic decline and how immenseley impactful it is to people's lives.</li>
+              <li>• I lived and worked in Montpelier, France for a year before grad school. On my time off, I biked around France and northern Spain.</li>
+              <li>• After reading the Bitcoin white paper, I began purchasing Bitcoin and crypto assets following the crash in 2017. I have largely held since and remain intrigued by blockchain applications.</li>
+            <li>• I believe in human agency and systems with strong skin-in-the-game; I am skeptical of systems that lack skin-in-the-game for relevant participants.</li>
+            <li>• I am a lifelong lover of skiing - a former freestyle skier who now enjoys skiing the glades and backcountry!</li>
           </ul>
           
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            As time permits, I will be adding my thoughts and projects of interest on this site.
+            As time permits, I will be adding thoughts and projects of interest on this site.
           </p>
         </div>
       </section>
