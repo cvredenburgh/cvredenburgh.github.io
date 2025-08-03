@@ -31,7 +31,7 @@ export default function About() {
     if (photos.length > 1) {
       const interval = setInterval(() => {
         setCurrentPhotoIndex((prev) => (prev + 1) % photos.length);
-      }, 8000);
+      }, 6000);
 
       return () => clearInterval(interval);
     }
@@ -46,11 +46,13 @@ export default function About() {
         {/* Photo Gallery */}
         <div className="mb-8 flex justify-center">
           <div className="relative max-w-md">
-            <img
-              src={photos[currentPhotoIndex].src}
-              alt={photos[currentPhotoIndex].alt}
-              className="rounded-lg shadow-md w-full h-auto"
-            />
+            <div className="w-full h-80 overflow-hidden rounded-lg shadow-md">
+              <img
+                src={photos[currentPhotoIndex].src}
+                alt={photos[currentPhotoIndex].alt}
+                className="w-full h-full object-cover"
+              />
+            </div>
             
             {/* Navigation arrows */}
             {photos.length > 1 && (
@@ -93,7 +95,7 @@ export default function About() {
             
             {/* Photo caption */}
             <p className="text-sm text-gray-500 dark:text-gray-400 text-center mt-2">
-              Personal photos
+              {photos[currentPhotoIndex].caption}
             </p>
           </div>
         </div>
