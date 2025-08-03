@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -25,6 +25,17 @@ export default function About() {
   const prevPhoto = () => {
     setCurrentPhotoIndex((prev) => (prev - 1 + photos.length) % photos.length);
   };
+
+  // Auto-cycle through photos every 4 seconds
+  useEffect(() => {
+    if (photos.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentPhotoIndex((prev) => (prev + 1) % photos.length);
+      }, 4000);
+
+      return () => clearInterval(interval);
+    }
+  }, [photos.length]);
 
   return (
     <div className="space-y-8">
