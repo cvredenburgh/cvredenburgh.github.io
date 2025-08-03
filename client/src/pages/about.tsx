@@ -31,7 +31,7 @@ export default function About() {
     if (photos.length > 1) {
       const interval = setInterval(() => {
         setCurrentPhotoIndex((prev) => (prev + 1) % photos.length);
-      }, 4000);
+      }, 8000);
 
       return () => clearInterval(interval);
     }
@@ -93,7 +93,7 @@ export default function About() {
             
             {/* Photo caption */}
             <p className="text-sm text-gray-500 dark:text-gray-400 text-center mt-2">
-              {photos[currentPhotoIndex].caption}
+              Personal photos
             </p>
           </div>
         </div>
