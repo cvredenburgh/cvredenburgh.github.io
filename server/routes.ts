@@ -57,7 +57,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Email content  
       const emailData = {
         to: 'cvredenburgh@gmail.com',
-        from: 'cvredenburgh@gmail.com', // Use verified Gmail address
+        from: 'contact@chrisvred.com', // Use verified domain address
         replyTo: email, // Set the visitor's email as reply-to
         subject: `Contact Form: ${subject}`,
         html: `
