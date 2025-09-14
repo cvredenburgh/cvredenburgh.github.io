@@ -78,8 +78,8 @@ export default function Contact() {
     }
 
     try {
-      // Send email via dedicated API server
-      const response = await fetch('https://contact-api.chrisvred.repl.co/send', {
+      // Send email via local API server
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -125,7 +125,7 @@ export default function Contact() {
           Links & Contact
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl">
-          Feel free to reach out to me through any of the linked channels! I'm always happy to connect with new people and discuss shared interests.
+          Connect with me via the linked channels! I'm open to discussing shared interests and exploring new projects, ventures, or consulting possibilities.
         </p>
       </section>
 

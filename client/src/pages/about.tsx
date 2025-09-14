@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -26,6 +26,17 @@ export default function About() {
     setCurrentPhotoIndex((prev) => (prev - 1 + photos.length) % photos.length);
   };
 
+  // Auto-cycle through photos every 4 seconds
+  useEffect(() => {
+    if (photos.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentPhotoIndex((prev) => (prev + 1) % photos.length);
+      }, 6000);
+
+      return () => clearInterval(interval);
+    }
+  }, [photos.length]);
+
   return (
     <div className="space-y-8">
       <section className="mb-12">
@@ -35,11 +46,13 @@ export default function About() {
         {/* Photo Gallery */}
         <div className="mb-8 flex justify-center">
           <div className="relative max-w-md">
-            <img
-              src={photos[currentPhotoIndex].src}
-              alt={photos[currentPhotoIndex].alt}
-              className="rounded-lg shadow-md w-full h-auto"
-            />
+            <div className="w-full h-80 overflow-hidden rounded-lg shadow-md">
+              <img
+                src={photos[currentPhotoIndex].src}
+                alt={photos[currentPhotoIndex].alt}
+                className="w-full h-full object-cover"
+              />
+            </div>
             
             {/* Navigation arrows */}
             {photos.length > 1 && (
@@ -90,43 +103,43 @@ export default function About() {
         {/* Content */}
         <div className="max-w-4xl">
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-              Hello! My name is Chris Vredenburgh. I currently live in Somerville, MA with my wife, Gloria, and son, Augustine. I work as VP of Product, AI & Data at a startup product development space.
+              Hello! My name is Chris Vredenburgh. I currently live in Somerville, MA with my wife, Gloria, and son, Augustine. I work as VP of Artificial Intelligence & Product at a startup in the product development space.  Prior, I worked in e-commerce and the pharmaceutical industry building data ecosystems and algorithms to optimize customer engagement and operations.
           </p>
           
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-            My interests are wide but interconnected, including:
+            My intellectual interests are wide but interconnected, including:
           </p>
           <ul className="text-lg text-gray-600 dark:text-gray-400 mb-4 ml-6 space-y-1">
               <li>• Causal statistics</li>
               <li>• Cognitive science</li>
+              <li>• Machine learning</li>
+              <li>• Personalization systems</li>
               <li>• Neuroscience</li>
               <li>• Developmental processes</li>
-              <li>• Personalization systems</li>
               <li>• Distributed systems & production</li>
-              <li>• Machine learning</li>
               <li>• Blockchain</li>
               <li>• Meaning making</li>
             <li>• How people can be productive together (collaboration)</li>
           </ul>
           
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-            Outside of looking at computer screens, I enjoy skiing, sailing, running, reading, and biking - preferably in beautiful places with good people.
+            Outside of looking at computer screens, I enjoy skiing, sailing, running, reading, and biking.  And I generally prefer doing those things in places with seasons.
           </p>
           
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
             A few personal artifacts:
           </p>
           <ul className="text-lg text-gray-600 dark:text-gray-400 mb-4 ml-6 space-y-2">
-              <li>• I used to do freestyle skiing.</li>
-              <li>• My interdisciplinary dissertation focused on identifying mechanistic predictors of free-flowing human collaboration via wearables and time series modeling. (At some point, I may add a summary and additional outputs.)</li>
-              <li>• I grew up in a southern Vermont town that, in my lifetime, went from a population &gt;20k to ~6.5k (still decreasing). This likely contributed to a side interest in human productivity and economics.</li>
-              <li>• I lived and worked in Montpelier, France for a year before grad school. On time off, I biked around southern France and northern Spain.</li>
-              <li>• I first began purchasing bitcoin and crypto assets in 2017, after its crash. I have largely held since.</li>
-            <li>• I believe in human agency, exposing oneself to multiple perspectives, and continuous learning.</li>
+              <li>• My interdisciplinary dissertation identified biological, cognitive, and environmental predictors of free-flowing human collaboration via wearables and time series modeling. (At some point, I may add a summary and additional outputs!)</li>
+              <li>• I grew up in a southern Vermont town that, in my lifetime, went from a population of 20k to ~6.5k. So I know a bit about what it's like to live through economic decline and how immenseley impactful it is to people's lives.</li>
+              <li>• I lived and worked in Montpelier, France for a year before grad school. On my time off, I biked around France and northern Spain.</li>
+              <li>• After reading the Bitcoin white paper, I began purchasing Bitcoin and crypto assets following the crash in 2017. I have largely held since and remain intrigued by blockchain applications.</li>
+            <li>• I believe in human agency and systems with strong skin-in-the-game; I am skeptical of systems that lack skin-in-the-game for relevant participants.</li>
+            <li>• I am a lifelong lover of skiing - a former freestyle skier who now enjoys skiing the glades and backcountry!</li>
           </ul>
           
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            I will be adding my thoughts and projects of interest on this site as time permits!
+            As time permits, I will be adding thoughts and projects of interest on this site.
           </p>
         </div>
       </section>
