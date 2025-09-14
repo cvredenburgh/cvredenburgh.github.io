@@ -78,8 +78,8 @@ export default function Contact() {
     }
 
     try {
-      // Send email via dedicated API server
-      const response = await fetch('https://contact-api.chrisvred.repl.co/send', {
+      // Send email via local API server
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
