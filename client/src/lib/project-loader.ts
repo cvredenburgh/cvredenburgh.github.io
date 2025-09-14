@@ -219,14 +219,13 @@ export async function loadProjects(): Promise<ProjectContent[]> {
     }
     
     // Fallback to API loading (for development)
-    const projectFiles = [
-      'fine-grained-representations.md',
-      'causal-learning-from-latent-space-representations.md',
-      'distillation-lessons.md', 
-      'modern-hiring.md'
-    ];
+    const listResponse = await fetch('/api/content/projects/');
+    if (!listResponse.ok) {
+      throw new Error('Failed to fetch project list');
+    }
+    const { files } = await listResponse.json();
     
-    const projectPromises = projectFiles.map(file => processMarkdownProject(file));
+    const projectPromises = files.map((file: string) => processMarkdownProject(file));
     const projects = await Promise.all(projectPromises);
     
     // Filter out any null results and sort by date (newest first)

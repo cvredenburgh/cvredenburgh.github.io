@@ -30,6 +30,27 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // List project files
+  app.get('/api/content/projects/', async (req, res) => {
+    try {
+      const fs = await import('fs');
+      const path = await import('path');
+      
+      const projectsDir = path.join(process.cwd(), 'content', 'projects');
+      
+      if (!fs.existsSync(projectsDir)) {
+        return res.status(404).send('Projects directory not found');
+      }
+      
+      const files = fs.readdirSync(projectsDir).filter(file => file.endsWith('.md'));
+      
+      res.json({ files });
+    } catch (error) {
+      console.error('Error listing project files:', error);
+      res.status(500).send('Internal server error');
+    }
+  });
+
   // Contact form endpoint
   app.post('/api/contact', async (req, res) => {
     try {
