@@ -25,6 +25,7 @@ A personal blogging website for Chris Vredenburgh that integrates with GitHub. F
 - Assets: images stored in client/public/ directory
 
 ## Recent Changes
+- 2025-09-15: Created comprehensive documentation directory with deployment guide, troubleshooting, and architecture docs
 - 2025-07-26: Fixed project loading with custom frontmatter parser (resolved gray-matter Buffer issue)
 - 2025-07-26: Added 4 new projects: fine-grained representations, causal learning, distillation lessons, modern hiring
 - 2025-07-26: Removed example project and Recent Reflections section, cleaned up projects page
@@ -49,3 +50,10 @@ A personal blogging website for Chris Vredenburgh that integrates with GitHub. F
 - client/public/CNAME: Custom domain configuration (NEVER REMOVE)
 - .replitignore: Deployment protection rules
 - dist/public/: Final build output for GitHub Pages
+
+## Documentation
+- docs/: Comprehensive documentation directory
+  - docs/deployment.md: Complete deployment guide and process
+  - docs/troubleshooting.md: Common issues and solutions
+  - docs/architecture.md: Technical system architecture
+  - docs/README.md: Documentation index and quick reference
