@@ -103,11 +103,11 @@ export default function About() {
         {/* Content */}
         <div className="max-w-4xl">
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-              Hello! My name is Chris Vredenburgh. I currently live in Somerville, MA with my wife, Gloria, and son, Augustine. I work as VP of Artificial Intelligence & Product at a startup in the product development space.  Prior, I worked in e-commerce and the pharmaceutical industry building data ecosystems and algorithms to optimize customer engagement and operations.
+              Hello! My name is Chris Vredenburgh. I currently live in Somerville, MA with my wife, Gloria, and son, Augustine. I work as VP of Artificial Intelligence & Product at a startup in the product development space.  Prior, I worked in e-commerce and the pharmaceutical industry building data, machine learning, and analytics solutions to optimize customer engagement and automate operations.
           </p>
           
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-            My intellectual interests are wide but interconnected, including:
+            My interests are wide but interconnected, including:
           </p>
           <ul className="text-lg text-gray-600 dark:text-gray-400 mb-4 ml-6 space-y-1">
               <li>• Causal statistics</li>
@@ -131,15 +131,15 @@ export default function About() {
           </p>
           <ul className="text-lg text-gray-600 dark:text-gray-400 mb-4 ml-6 space-y-2">
               <li>• My interdisciplinary dissertation identified biological, cognitive, and environmental predictors of free-flowing human collaboration via wearables and time series modeling. (At some point, I may add a summary and additional outputs!)</li>
-              <li>• I grew up in a southern Vermont town that, in my lifetime, went from a population of 20k to ~6.5k. So I know a bit about what it's like to live through economic decline and how immenseley impactful it is to people's lives.</li>
-              <li>• I lived and worked in Montpelier, France for a year before grad school. On my time off, I biked around France and northern Spain.</li>
-              <li>• After reading the Bitcoin white paper, I began purchasing Bitcoin and crypto assets following the crash in 2017. I have largely held since and remain intrigued by blockchain applications.</li>
-            <li>• I believe in human agency and systems with strong skin-in-the-game; I am skeptical of systems that lack skin-in-the-game for relevant participants.</li>
+              <li>• I grew up in a southern Vermont town that, in my lifetime, went from a population > 20k to < 6.5k. So I know a bit about what it's like to live through economic decline and how impactful it is to people's lives.</li>
+              <li>• I lived and worked in Montpelier, France for a year prior to grad school. On my time off, I biked around France and northern Spain.</li>
+              <li>• During the bitcoin crash in 2017, I read the Bitcoin white paper and began purchasing Bitcoin and crypto assets. I have largely held since and remain intrigued by the potential of blockchain applications.</li>
+            <li>• I believe in human agency and systems with strong skin-in-the-game, and am skeptical of systems that lack true stake for participants!</li>
             <li>• I am a lifelong lover of skiing - a former freestyle skier who now enjoys skiing the glades and backcountry!</li>
           </ul>
           
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            As time permits, I will be adding thoughts and projects of interest on this site.
+            As time permits, I will be adding projects of interest as well as reflections on this site.
           </p>
         </div>
       </section>

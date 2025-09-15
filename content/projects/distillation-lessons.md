@@ -1,6 +1,6 @@
 ---
 title: Model Distillation & a 'New Information Theory'
-description: Exploring insights from LLM distillation and fine-tuning for an emerging 'new information theory' of deep learning.
+description: Inspired by research on a 'new information theory' for deep learning, I explore insights from LLM distillation and fine-tuning.
 tags: ["AI", "LLM", "distillation", "fine tuning"]
 githubUrl: https://github.com/cvredenburgh/distillation-info-theory
 date: 2025-07-25
