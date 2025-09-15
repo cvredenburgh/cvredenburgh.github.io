@@ -125,7 +125,7 @@ export default function Contact() {
           Links & Contact
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl">
-          Connect with me via the linked channels! I'm open to discussing shared interests and exploring new projects, ventures, or consulting possibilities.
+          Please feel free to connect with me via the linked channels. I am open to exploring new projects, ventures, or consulting possibilities (or simply discussing shared interests).
         </p>
       </section>
 
