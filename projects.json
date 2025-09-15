@@ -2,7 +2,7 @@
   {
     "id": "causal-learning-from-latent-space-representations",
     "title": "Causal Learning From Rich Vision Language Model (VLM) Representations",
-    "description": "Investigating how rich latent representations from vision-language models (VLMs) can be leveraged for causal learning. In this case, we learn about how product features and design impact customer sentiment and responses.",
+    "description": "Demonstrating how latent, fine-grained representations from vision-language models (VLMs) can be leveraged for causal learning. In this application, I manipulate product design representations to understand how design choices impact customer sentiment and responses.",
     "tags": [
       "AI",
       "VLM",
@@ -16,8 +16,8 @@
   },
   {
     "id": "distillation-lessons",
-    "title": "Model Distillation & a 'New Information Theory'",
-    "description": "Exploring insights from LLM distillation and fine-tuning for an emerging 'new information theory' of deep learning.",
+    "title": "Insights for the 'New Information Theory' From LLM Distillation",
+    "description": "Inspired by research on a 'new information theory' for deep learning, I explore insights from LLM distillation and fine-tuning.",
     "tags": [
       "AI",
       "LLM",
@@ -31,8 +31,8 @@
   },
   {
     "id": "fine-grained-representations",
-    "title": "Regional Contrastive Learning for Visual Product Concepts",
-    "description": "Improving product representations through contrastive learning with optimized regional grounding. Then, the fine-grained product representations are leveraged for predicting customer sentiment and response.",
+    "title": "Regional Contrastive Learning for Fine-grained Product Representations",
+    "description": "Improving product representations through contrastive learning with optimized regional grounding. Fine-grained product representations are then leveraged for improving predictions of customer sentiment and response.",
     "tags": [
       "AI",
       "contrastive learning",
@@ -42,13 +42,13 @@
     ],
     "githubUrl": "https://github.com/cvredenburgh/multimodal-concept-evaluation",
     "date": "2025-07-25T00:00:00.000Z",
-    "content": "<div class=\"prose max-w-none\"><p><h1>Regional Contrastive Learning for Visual Product Concepts</h1></p><p>This project builds on earlier research in multimodal product modeling. It explores ways to enhance visual representation quality for fashion products by refining contrastive learning methods, token alignment, and evaluating latent visual relevance.</p><p>- Testing model architecture enhancements to improve performance<br>  - Organic token pruning methodologies<br>  - Relaxing tag entity-to-image region constraints<br>  - Wavelet-based transformers to better detect relevant patterns<br>- Techniques to assess the quality of the visual model's representations<br>- Leveraging the model to evaluate product concepts</p><p>🚧 <em>In progress – coming soon.</em></p></div>",
+    "content": "<div class=\"prose max-w-none\"><p><h1>Regional Contrastive Learning for Visual Product Concepts</h1></p><p>This project builds on earlier research in multimodal product modeling. It explores ways to enhance multimodal representation quality for fashion products by refining contrastive learning methods, token alignment, and evaluating latent visual relevance.</p><p>- Testing model architecture enhancements to improve performance<br>  - Organic token pruning methodologies<br>  - Relaxing tag entity-to-image region constraints<br>  - Wavelet-based transformers to better detect relevant patterns<br>- Techniques to assess the quality of the visual model's representations<br>- Leveraging the model to evaluate product concepts</p><p>🚧 <em>In progress – coming soon.</em></p></div>",
     "slug": "fine-grained-representations"
   },
   {
     "id": "modern-hiring",
-    "title": "Hiring is Active Investing: Reflecting on Evidence of the Limits of Structured Interviews",
-    "description": "Similar to active investing, research shows hiring managers rarely outperform the index. For example, case study evaluations, coding evaluation scores, and other highly structured interviews consistently show very poor job performance forecasting. I explore the implications for today's ultra-lengthy hiring processes, and what productive interview cycles could instead focus on (from both sides).",
+    "title": "Hiring is Active Investing: Reflecting on the Limits of Structured Interviews",
+    "description": "Similar to active investing, a wide body of research (both academic and corporate) shows hiring managers rarely outperform the index (chance). For example, case study evaluations and coding evaluation scores consistently show very poor predictability for later job performance. I explore what productive interview cycles could instead focus on (for both sides).",
     "tags": [
       "hiring",
       "talent management",
