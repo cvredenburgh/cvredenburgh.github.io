@@ -159,7 +159,14 @@ const processMarkdownProject = async (filename: string, content?: string): Promi
       }
     }
     
-    const slug = filename.replace(/\.md$/, '');
+    // Generate URL-friendly slug from filename
+    const slug = filename
+      .replace(/\.md$/, '')  // Remove .md extension
+      .toLowerCase()          // Convert to lowercase
+      .replace(/[^a-z0-9\s-]/g, '') // Remove special characters except spaces and hyphens
+      .replace(/\s+/g, '-')   // Replace spaces with hyphens
+      .replace(/-+/g, '-')    // Replace multiple hyphens with single hyphen
+      .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
     
     // Use custom frontmatter parser (gray-matter has Buffer issues in browser)
     const { data, content: markdownContent } = parseFrontmatter(rawContent);
