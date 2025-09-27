@@ -1,0 +1,76 @@
+You are an expert React developer working on my personal portfolio website project in Replit. The site is built with React.js (using TypeScript), Tailwind CSS, shadcn/ui components, Vite for building, and deploys to GitHub Pages with a custom domain (chrisvred.com). The architecture includes a client/ directory for frontend, content/projects/ for markdown files with frontmatter (title, description, tags, date, etc.), and the system automatically scans and builds projects.json during deployment.
+Currently, the Projects page lists project cards, and clicking a card expands it inline to show the markdown content. I want to change this behavior so that clicking a project card navigates to a dedicated article page at /projects/:slug (where :slug is a URL-friendly version of the project title or filename, e.g., /projects/my-project-name). This will improve sharing, SEO, and the reading experience.
+Implement the following features precisely, without breaking existing functionality like the deployment process (which uses npm run build, copies CNAME and .replitignore, and deploys via gh-pages), theme toggle, contact form, or other pages (Home, About, Contact). Use React Router for navigation if not already set up (add it via npm if needed, but confirm it works in the Replit environment). Test everything thoroughly in the Replit preview before finalizing changes—simulate clicks, navigation, sharing, media rendering, and refresh the page to ensure no errors. After testing, provide a summary of what you changed, any new files added, and confirmation that deployment will still work.
+Detailed requirements:
+
+Navigation Change:
+
+On the Projects page (projects.tsx or equivalent), update the project cards so that clicking the card or a "Read More" button navigates to the new dedicated page instead of expanding inline.
+Use React Router's <Link> or useNavigate() for smooth SPA navigation.
+Generate unique slugs for each project based on the filename (minus .md) or title, converted to lowercase with spaces replaced by hyphens (e.g., "My Project.md" -> "my-project").
+Add a dynamic route in the router setup (likely in App.tsx or a routes file) for /projects/:slug, rendering a new component like ProjectArticle.tsx.
+
+
+Dedicated Article Page Layout (ProjectArticle.tsx):
+
+Clean and professional interface: Use shadcn/ui components for consistency (e.g., Card, Typography).
+At the top: Include the existing site header/navbar (import from components/header.tsx or equivalent) for navigation back to other pages.
+Below the header: Display the article title (from frontmatter) in a large heading (e.g., h1 with Tailwind classes like text-3xl font-bold).
+Below the title: Show tags as pills or badges (using shadcn Badge component), e.g., in a flex row with spacing.
+Then: Render the full markdown content using the existing markdown renderer (react-markdown or similar). Ensure it handles headings, paragraphs, lists, code blocks, etc., with Tailwind prose classes for styling (e.g., prose dark:prose-invert).
+Handle embedded media seamlessly:
+
+Images: Support markdown syntax like Failed to load imageView link, with paths relative to client/public/ (e.g., /images/my-image.jpg). Use <img> tags in rendering with proper src resolution.
+Figures: Treat as images with captions if markdown supports (e.g., via react-markdown plugins).
+Videos: Support <video> embeds or markdown links to video files/URLs (e.g., YouTube embeds via iframe). Ensure they play inline without issues.
+
+
+At the bottom of the article: Add a section with share buttons.
+
+Buttons: "Share on X" (formerly Twitter), "Share on LinkedIn", "Share via Email".
+Implement as shadcn Button components in a flex row.
+For X: Link to https://twitter.com/intent/tweet?url={currentUrl}&text={title}
+For LinkedIn: Link to https://www.linkedin.com/sharing/share-offsite/?url={currentUrl}
+For Email: Use mailto:?subject={title}&body=Check out this article: {currentUrl}
+Use window.location.href to get the currentUrl dynamically.
+Add a fallback to the Web Share API if supported (navigator.share) for a native share dialog, but keep the buttons as primary.
+
+
+
+
+SEO and AI Search Optimization:
+
+Use react-helmet (add via npm if needed) to dynamically set <title>, <meta name="description">, and <meta name="keywords"> on the article page.
+
+Title: "{articleTitle} | Chris Vredenburgh's Portfolio"
+Description: From frontmatter description.
+Keywords: Comma-separated tags from frontmatter, plus relevant content keywords (extract 3-5 key phrases from the content if possible, but keep it simple).
+
+
+Add Open Graph meta tags (og:title, og:description, og:url, og:type="article", og:image if an image is in frontmatter or first in content).
+For AI search: Ensure content is semantic with proper headings, alt text on images, and structured data if feasible (e.g., JSON-LD for Article schema with headline, datePublished, author="Chris Vredenburgh").
+Update the build process if needed to pre-render or handle SSR, but since it's GitHub Pages SPA, rely on client-side rendering with meta updates.
+
+
+Data Loading and Integration:
+
+Load project data: On the article page, fetch the specific markdown file/content based on the slug (use useParams() from React Router).
+Parse frontmatter and content using the existing custom parser (gray-matter or similar, as per recent changes).
+If projects.json is used, enhance it during build to include slugs.
+Handle errors: If slug not found, show a 404-like message or redirect to Projects page.
+
+
+Testing Protocol:
+
+In Replit: Run the app, add a test markdown file in content/projects/ with embedded image and video (use placeholder URLs if needed).
+Test navigation: Click card -> navigates to /projects/slug, shows full page.
+Test media: Ensure images load, videos play.
+Test share: Click buttons -> opens correct share intent (use console.log if popups blocked).
+Test SEO: Inspect page source or use dev tools to verify meta tags.
+Test responsiveness: Mobile/desktop, dark/light mode.
+Test back navigation: Browser back button works without issues.
+Simulate deployment: Run npm run build, check dist/ output for new routes (note: GitHub Pages handles SPA routing via _redirects file).
+
+
+
+After implementation and testing, commit changes with a clear message like "Implemented dedicated project article pages with sharing and SEO". If any issues arise, explain them and suggest fixes. Do not remove or modify CNAME, .replitignore, or deployment scripts.
