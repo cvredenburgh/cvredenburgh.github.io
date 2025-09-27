@@ -171,17 +171,37 @@ const processMarkdownProject = async (filename: string, content?: string): Promi
     // Use custom frontmatter parser (gray-matter has Buffer issues in browser)
     const { data, content: markdownContent } = parseFrontmatter(rawContent);
     
-    // Simple markdown to HTML conversion
+    // Enhanced markdown to HTML conversion with media support
     const htmlContent = markdownContent
-      .replace(/### (.+)/g, '<h3>$1</h3>')
-      .replace(/## (.+)/g, '<h2>$1</h2>')
-      .replace(/# (.+)/g, '<h1>$1</h1>')
-      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-      .replace(/\*(.+?)\*/g, '<em>$1</em>')
-      .replace(/`([^`]+)`/g, '<code>$1</code>')
-      .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img alt="$1" src="$2" class="max-w-full h-auto" />')
-      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-blue-600 hover:underline">$1</a>')
-      .replace(/\n\n/g, '</p><p>')
+      .replace(/### (.+)/g, '<h3 class="text-xl font-semibold mt-6 mb-3">$1</h3>')
+      .replace(/## (.+)/g, '<h2 class="text-2xl font-bold mt-8 mb-4">$1</h2>')
+      .replace(/# (.+)/g, '<h1 class="text-3xl font-bold mt-8 mb-6">$1</h1>')
+      .replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold">$1</strong>')
+      .replace(/\*(.+?)\*/g, '<em class="italic">$1</em>')
+      .replace(/`([^`]+)`/g, '<code class="bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono">$1</code>')
+      // Enhanced image support with better styling
+      .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, src) => {
+        // Check if it's a video file
+        if (src.match(/\.(mp4|webm|ogg|mov)$/i)) {
+          return `<video controls class="w-full max-w-full h-auto rounded-lg shadow-md my-4">
+                    <source src="${src}" type="video/${src.split('.').pop()}">
+                    Your browser does not support the video tag.
+                  </video>`;
+        }
+        // Regular image
+        return `<img alt="${alt}" src="${src}" class="w-full max-w-full h-auto rounded-lg shadow-md my-4" loading="lazy" />`;
+      })
+      // YouTube embed support
+      .replace(/\[youtube\]\(([^)]+)\)/g, '<iframe src="$1" frameborder="0" allowfullscreen class="w-full aspect-video rounded-lg my-4"></iframe>')
+      // Regular links
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">$1</a>')
+      // Code blocks
+      .replace(/```(\w+)?\n([\s\S]*?)```/g, '<pre class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg overflow-x-auto my-4"><code class="text-sm font-mono">$2</code></pre>')
+      // Lists
+      .replace(/^\* (.+)$/gm, '<li class="ml-4 list-disc">$1</li>')
+      .replace(/^- (.+)$/gm, '<li class="ml-4 list-disc">$1</li>')
+      // Paragraphs
+      .replace(/\n\n/g, '</p><p class="mb-4">')
       .replace(/\n/g, '<br>');
     
     const wrappedHtml = `<div class="prose max-w-none"><p>${htmlContent}</p></div>`;
