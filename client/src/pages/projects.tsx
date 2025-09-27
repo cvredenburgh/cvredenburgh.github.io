@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "wouter";
 import { ProjectCard } from "@/components/projects/project-card";
-
+import { Button } from "@/components/ui/button";
 import { loadProjects, ProjectContent } from "@/lib/project-loader";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -15,13 +16,11 @@ interface DisplayProject {
 }
 
 export default function Projects() {
+  const [, navigate] = useLocation();
   // State for markdown projects
   const [projects, setProjects] = useState<ProjectContent[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const [selectedProject, setSelectedProject] = useState<ProjectContent | null>(
-    null,
-  );
 
   // Load projects from markdown files
   useEffect(() => {
@@ -101,35 +100,33 @@ export default function Projects() {
           {(displayProjects.length > 0
             ? displayProjects
             : fallbackProjects
-          ).map((project) => (
-            <div
-              key={project.id}
-              onClick={() => {
-                // Find the full project with content
-                const fullProject = projects.find((p) => p.id === project.id);
-                setSelectedProject(fullProject || null);
-              }}
-              className="cursor-pointer"
-            >
-              <ProjectCard project={project} />
-            </div>
-          ))}
+          ).map((project) => {
+            // Find the full project to get the slug
+            const fullProject = projects.find((p) => p.id === project.id);
+            const slug = fullProject?.slug || project.id;
+            
+            return (
+              <div key={project.id} className="group">
+                <div 
+                  onClick={() => navigate(`/projects/${slug}`)}
+                  className="cursor-pointer transition-transform duration-200 hover:scale-[1.02]"
+                >
+                  <ProjectCard project={project} />
+                </div>
+                <div className="mt-4 flex justify-center">
+                  <Button 
+                    onClick={() => navigate(`/projects/${slug}`)}
+                    variant="outline"
+                    className="w-full max-w-xs"
+                  >
+                    Read More
+                  </Button>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
-        {/* Show selected project content */}
-        {selectedProject && (
-          <Card className="mt-8">
-            <CardContent className="pt-6">
-              <h2 className="text-2xl font-bold mb-4">
-                {selectedProject.title}
-              </h2>
-              <div
-                className="prose dark:prose-invert max-w-none"
-                dangerouslySetInnerHTML={{ __html: selectedProject.content }}
-              />
-            </CardContent>
-          </Card>
-        )}
 
 
       </section>
