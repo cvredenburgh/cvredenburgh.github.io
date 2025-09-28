@@ -45,12 +45,13 @@ export default function About() {
         </h1>
         {/* Photo Gallery */}
         <div className="mb-8 flex justify-center">
-          <div className="relative max-w-md">
-            <div className="w-full h-80 overflow-hidden rounded-lg shadow-md">
+          <div className="relative max-w-md sm:max-w-xl">
+            <div className="w-full h-64 sm:h-96 overflow-hidden rounded-lg shadow-md">
               <img
                 src={photos[currentPhotoIndex].src}
                 alt={photos[currentPhotoIndex].alt}
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
             
