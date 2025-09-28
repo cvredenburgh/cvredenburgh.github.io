@@ -14,9 +14,11 @@
           var decoded = l.search.slice(1).split('&').map(function(s) { 
             return s.replace(/~and~/g, '&')
           }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
-          );
+          console.log('GitHub Pages redirect detected:', l.search);
+          console.log('Decoded path:', decoded);
+          var newPath = (l.pathname.length > 1 ? l.pathname.slice(0, -1) : '') + decoded + l.hash;
+          console.log('Redirecting to:', newPath);
+          window.history.replaceState(null, null, newPath);
         }
       }(window.location))
     </script>
