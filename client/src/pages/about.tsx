@@ -130,11 +130,11 @@ export default function About() {
             A few personal artifacts:
           </p>
           <ul className="text-lg text-gray-600 dark:text-gray-400 mb-4 ml-6 space-y-2">
-              <li>• My interdisciplinary dissertation identified biological, cognitive, and environmental predictors of free-flowing human collaboration via wearables and time series modeling. (At some point, I may add a summary and additional outputs!)</li>
+              <li>• My interdisciplinary dissertation identified novel biological, cognitive, and environmental predictors of free-flowing human collaboration via wearables and time series modeling. (At some point, I may add a summary and additional outputs!)</li>
               <li>• I grew up in a southern Vermont town that, in my lifetime, went from a population &gt; 20k to &lt; 6.5k. So I know a bit about what it's like to live through economic decline and how impactful it is to people's lives.</li>
               <li>• I lived and worked in Montpelier, France for a year prior to grad school. On my time off, I biked around France and northern Spain.</li>
-              <li>• During the bitcoin crash in 2017, I read the Bitcoin white paper and began purchasing Bitcoin and crypto assets. I have largely held since and remain intrigued by the potential of blockchain applications.</li>
-            <li>• I believe in human agency and systems with strong skin-in-the-game, and am skeptical of systems that lack true stake for participants!</li>
+              <li>• During the Bitcoin crash in 2017, I read the Bitcoin white paper and began purchasing Bitcoin and crypto assets. I have largely held since and remain intrigued by the potential of blockchain applications.</li>
+            <li>• I believe in human agency and systems with strong skin-in-the-game, and am skeptical of systems that lack true stake for participants.</li>
             <li>• I am a lifelong lover of skiing - a former freestyle skier who now enjoys skiing the glades and backcountry!</li>
           </ul>
           
