@@ -1,52 +1,53 @@
 [
   {
-    "id": "causal-learning-from-latent-space-representations",
-    "title": "Causal Learning From Rich Vision Language Model (VLM) Representations",
-    "description": "Demonstrating how latent, fine-grained representations from vision-language models (VLMs) can be leveraged for causal learning. In this application, I manipulate product design representations to understand how design choices impact customer sentiment and responses.",
-    "tags": [
-      "AI",
-      "VLM",
-      "causal modeling",
-      "foundation models"
-    ],
-    "githubUrl": "https://github.com/cvredenburgh/concept-mining",
-    "date": "2025-07-25T00:00:00.000Z",
-    "content": "<div class=\"prose max-w-none\"><p><h1>Causal Learning From Rich Vision Language Model (VLM) Representations</h1></p><p>This project builds on prior work using rich VLM representations (e.g. CLIP) for product understanding. I explore how these embeddings can be used for causal modeling — through attribution analysis, latent mining, and targeted counterfactual generation.</p><p>🚧 <em>In progress – coming soon.</em></p></div>",
-    "slug": "causal-learning-from-latent-space-representations"
-  },
-  {
-    "id": "distillation-lessons",
-    "title": "Insights for the 'New Information Theory' From LLM Distillation",
-    "description": "Inspired by research on a 'new information theory' for deep learning, I explore insights from LLM distillation and fine-tuning.",
+    "id": "distillation-info-theory",
+    "title": "Distillation As Information Bottleneck",
+    "description": "Assessing model distillation through the lens of the information bottleneck principle (what information is retained vs. discarded)",
     "tags": [
       "AI",
       "LLM",
       "distillation",
-      "fine tuning"
+      "fine-tuning",
+      "compression",
+      "generalization",
+      "information theory",
+      "model scaling"
     ],
     "githubUrl": "https://github.com/cvredenburgh/distillation-info-theory",
-    "date": "2025-07-25T00:00:00.000Z",
-    "content": "<div class=\"prose max-w-none\"><p><h1>Model Distillation & a 'New Information Theory'</h1></p><p><br>🚧 <em>In progress – coming soon.</em></p></div>",
-    "slug": "distillation-lessons"
+    "date": "2025-10-25T00:00:00.000Z",
+    "content": "<div class=\"prose max-w-none\"><p><h1>Distillation as Information Bottleneck</h1></p><p>🚧 In progress</p><p><h2>Background</h2></p><p><br><h2>Hypotheses</h2></p><p><br><h3>Methods</h3></p><p><h2>Results</h2></p><p><br><h2>Summary</h2></p></div>",
+    "slug": "distillation-info-theory"
+  },
+  {
+    "id": "topic-modeling-llms",
+    "title": "Statistical Topics to Actionable Insights: Elevating Topic Modeling With LLMs",
+    "description": "Topic models can find the signal in noisy text, but often stop at sets of words. Coupling LLMs with traditional data science, we can turn statistical patterns into clear insights, summaries, and actions.",
+    "tags": [],
+    "githubUrl": "https://github.com/cvredenburgh/topic-modeling-with-llms",
+    "date": "2025-09-29T00:00:00.000Z",
+    "content": "<div class=\"prose max-w-none\"><p><h1>Statistical Topics to Actionable Insights: Elevating Topic Modeling With LLMs</h1><br>🚧 In progress</p><p><h2>Topic Modeling Background</h2><br>- Why topic modeling still matters<br>- Statistical foundations<br>- Limits of topic modeling</p><p><br><h3>Applications</h3><br>- Social media<br>- Business operations</p><p><h3>Popular APIs</h3><br>- BERTopic<br>- FASTopic</p><p><h3>Evaluation & Optimization</h3></p><p><br><h3>Hierarchical Topic Trends & Visualizing Relationships</h3><br>- How topics evolve across time (e.g., seasonal complaints, feature shifts).<br>- Identifying parent/child topic hierarchies.<br>- Statistical significance tests on topic prevalence across groups (A/B, region, demographics).</p><p><br><h2>LLM Topic Enrichment</h2><br>- Summarization<br>- Automated Labeling<br>- Contextual enrichment</p><p><br><h2> Unstructured Information -> Signal -> Action</h2><br>- Applying statistical testing to validate observed trends.<br>- Turning noisy text into actionable KPIs (e.g., which customer segment mentions durability most).<br>Detecting weak signals or emerging trends.</p><p></p></div>",
+    "slug": "topic-modeling-llms"
   },
   {
     "id": "fine-grained-representations",
     "title": "Regional Contrastive Learning for Fine-grained Product Representations",
-    "description": "Improving product representations through contrastive learning with optimized regional grounding. Fine-grained product representations are then leveraged for improving predictions of customer sentiment and response.",
+    "description": "How can we teach AI to better understand the subtle differences in product design—like the cut of a collar or the curve of a sole? This project builds on regional contrastive learning methods (E² CLiP) to refine multimodal product representations, experimenting with token alignment, pruning, and wavelet-based transformers to capture fine-grained product features.",
     "tags": [
       "AI",
       "contrastive learning",
-      "vision-language",
-      "product modeling",
+      "CLiP",
+      "vision-language models",
+      "product concept evaluation",
+      "multimodal",
       "representation learning"
     ],
     "githubUrl": "https://github.com/cvredenburgh/multimodal-concept-evaluation",
     "date": "2025-07-25T00:00:00.000Z",
-    "content": "<div class=\"prose max-w-none\"><p><h1>Regional Contrastive Learning for Visual Product Concepts</h1></p><p>This project builds on earlier research in multimodal product modeling. It explores ways to enhance multimodal representation quality for fashion products by refining contrastive learning methods, token alignment, and evaluating latent visual relevance.</p><p>- Testing model architecture enhancements to improve performance<br>  - Organic token pruning methodologies<br>  - Relaxing tag entity-to-image region constraints<br>  - Wavelet-based transformers to better detect relevant patterns<br>- Techniques to assess the quality of the visual model's representations<br>- Leveraging the model to evaluate product concepts</p><p>🚧 <em>In progress – coming soon.</em></p></div>",
+    "content": "<div class=\"prose max-w-none\"><p><h1>Regional Contrastive Learning for Multimodal Product Concept Evaluation</h1></p><p>🚧 In progress – coming soon.</p><p><h2>CLiP Background</h2></p><p><br><h2>Overview of Fine-Grained Representation Learning</h2></p><p><br><h3>Background on E^2 CLiP Extension</h3></p><p>D. Qi, H. Zhao, and S. Li, ‘Easy Regional Contrastive Learning of Expressive Fashion Representations’, presented at the The Thirty-eighth Annual Conference on Neural Information Processing Systems, 2024</p><p><h2>Applying E^2 Fork to New Domains</h2></p><p><br><h2>Hypotheses: Constructive E^2 Extensions</h2><br>- Hierarchical specialized tokens (data quality impact)<br>- Information-based token pruning<br>- Multi-view image consistency<br>- Loosening token-to-region mapping<br>- Wavelet-based transformer for finer image representation<br>- Applying E^2 with more recent multimodal models</p><p><br><h2>Methods</h2></p><p><h2>Results</h2></p><p><br><h2>Summary</h2></p><p></p></div>",
     "slug": "fine-grained-representations"
   },
   {
-    "id": "modern-hiring",
+    "id": "hiring-active-investing",
     "title": "Hiring is Active Investing: Reflecting on the Limits of Structured Interviews",
     "description": "Similar to active investing, a wide body of research (both academic and corporate) shows hiring managers rarely outperform the index (chance). For example, case study evaluations and coding evaluation scores consistently show very poor predictability for later job performance. I explore what productive interview cycles could instead focus on (for both sides).",
     "tags": [
@@ -56,7 +57,24 @@
     ],
     "githubUrl": "https://github.com/cvredenburgh/hiring-active-investing",
     "date": "2025-07-25T00:00:00.000Z",
-    "content": "<div class=\"prose max-w-none\"><p><h1>Hiring is Active Investing: Reflecting on Evidence of the Limits of Structured Interviews</h1></p><p><br>🚧 Write-up in progress — coming soon.</p></div>",
-    "slug": "modern-hiring"
+    "content": "<div class=\"prose max-w-none\"><p>🚧 Write-up in progress</p><p><h1>Hiring is Active Investing: Reflecting on the Limits of Interviews & What To Do About It</h1></p><p><h2>The Team Is Every Organization's Most Important Product</h2><br>It may sound cliche in 2025, but it must be emphasized at the top that every organization's team is the most important product.  The team is its destiny.</p><p><br><h2>A Brief History of Active Investing</h2><br>- Index investing versus consistent active performance (Benjamin Graham to Vanguard and recent hedge fund performance)</p><p><br><h2>A Brief Overview of Interviews And Their Relative Effectiveness</h2><br>- Generally, interviews aim to filter candidate pools to identify the candidates who will perform the best<br>- Hiring is an investment in talent<br>- While not perfect, we are now awash in job performance data</p><p><h3>Unstructured Interviews</h3><br>- Very poor predictability of job performance</p><p><br><h3>Structured Interviews</h3><br>- Case studies also have very poor job performance predictability<br>- Coding interviews (Google studies)</p><p><br>(high false negative and near 0 predictability)<br>Wingate, T. G., Bourdage, J. S., & Steel, P. (2024). Evaluating interview criterion-related validity for distinct constructs: A meta-analysis. International Journal of Selection and Assessment. DOI: 10.1111/ijsa.12494. (85 studies, n=30,000+; r=0.30 overall, but drops for contextual performance.)</p><p>Weekley & Gier (1987) within McDaniel: r=0.48 for sales (case-analog), but n=104 limits generalizability. Critique: Tan, H. (2023). Do consulting case study interviews work? A deep dive. StrategyU Blog. https://strategyu.co/case-studies-deep-dive/</p><p><br>(code interviews and brain teasers near 0 predictability, 10y of Google data)<br>Bock, L. (2015). Work Rules! Insights from Inside Google That Will Transform How You Live and Lead.</p><p><h3>False Negatives</h3><br>- Very, very few managers honestly track even basic hiring performance metrics; for example, False Negatives<br>Cite Rabois, others</p><p><br><h3>Evidence Indicates Hiring Managers Are Like Ignorant Active Investors</h3></p><p></p><p><h2>So What To Do?</h2><br>We are likely in the circumstance (systemically speaking, at least in the United States) of: <br>a) knowing the importance of selecting a great team and <br>b) not having effective tools to do so, but <br>c) electing to spend enormous resources on interviewing so as to at least <em>give the impression we are taking team development very seriously and instituting all the best (ineffective) practices.</em></p><p><br><h3>What Can Be Learned In Interview?</h3></p><p>#<h3>What Interviews Incentivize</h3></p><p>(falsehoods and overclaims)<br>Levashina, J., Hartwell, C. J., Morgeson, F. P., & Campion, M. A. (2014). The structured employment interview: Narrative and quantitative review. Personnel Psychology, 67(1), 241–293. (Meta on deception; ties to low r=0.18 for unstructured.)</p><p><br><h2>Takeaways</h2></p><p></p><p></p><p><br></p></div>",
+    "slug": "hiring-active-investing"
+  },
+  {
+    "id": "vlm-causal-inference",
+    "title": "Causal Learning From Fine-Grained VLM Representations",
+    "description": "This project explores how fine-grained representations from vision-language models (VLMs) can be leveraged for causal learning in product design. By mining latent embeddings, attributing outcomes to design features, and generating counterfactual variations, I investigate how design choices causally influence customer sentiment and response.",
+    "tags": [
+      "AI",
+      "VLM",
+      "causal modeling",
+      "foundation models",
+      "counterfactuals",
+      "product concept evaluation"
+    ],
+    "githubUrl": "https://github.com/cvredenburgh/representation-mining",
+    "date": "2025-07-25T00:00:00.000Z",
+    "content": "<div class=\"prose max-w-none\"><p><h1>Causal Learning From Fine-Grained VLM Representations</h1></p><p>🚧 In progress</p><p><h2>Background</h2></p><p><br><h2>Hypotheses</h2><br>- Local attribution mining<br>- Latent-space reasoning: concept activation vectors<br>- Diffusion-based counterfactual evaluation</p><p><h3>Methods</h3></p><p><br><h2>Results</h2></p><p><br><h2>Summary</h2></p><p></p></div>",
+    "slug": "vlm-causal-inference"
   }
 ]
