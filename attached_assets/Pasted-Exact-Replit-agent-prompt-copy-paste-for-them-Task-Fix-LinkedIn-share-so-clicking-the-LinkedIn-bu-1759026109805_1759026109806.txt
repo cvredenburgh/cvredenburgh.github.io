@@ -1,0 +1,35 @@
+Exact Replit agent prompt (copy/paste for them)
+Task: Fix LinkedIn share so clicking the LinkedIn button opens the LinkedIn composer with the article URL pre-filled.
+
+Context:
+- Current behavior: LinkedIn page opens but composer does not include the link.
+- Tech: React SPA (uses React Router). Replit preview used for development.
+- Desired: clicking "Share on LinkedIn" opens a new tab/window with the composer and the article URL correctly pre-filled.
+
+Steps to implement & verify:
+1. Replace any React Router <Link> or router-intercepted element used for LinkedIn with a plain <a> anchor:
+   <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(articleUrl)}`} target="_blank" rel="noopener noreferrer">Share on LinkedIn</a>
+   - Ensure server-side or client-side properly fills articleUrl (canonical URL).
+2. If using a JS button, ensure window.open is called synchronously inside the click handler (no async/await before it).
+   Example:
+   const shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(articleUrl)}`;
+   window.open(shareUrl, '_blank', 'noopener,noreferrer');
+3. Add logging: console.log('shareUrl=', shareUrl) before opening.
+4. Add a fallback UI: if window.open returns null (popup blocked), show a modal with the shareUrl so the user can copy it manually.
+5. Add a test page route that renders a static anchor to:
+   https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.google.com
+   Verify clicking that link in both Replit preview and external browser opens LinkedIn composer with Google link. Document results.
+6. Test the actual article URL by pasting the constructed shareUrl (from console) into browser address bar — verify composer includes the link.
+7. If composer still does not include link for the real article URL:
+   - Verify the article URL is publicly accessible (not behind auth).
+   - Check robots.txt or server headers for blocks preventing LinkedIn from reading the page.
+   - If server returns 403/401, fix hosting or make the page public for sharing.
+8. Add Open Graph tags on article pages (og:title, og:description, og:image) for good LinkedIn previews — not required to prefill, but improves appearance.
+
+Deliverable:
+- Commit with changes and short PR description.
+- A small verification log: console outputs for shareUrl and a screenshot showing the LinkedIn composer with the URL prefilled (from an external browser).
+- If something cannot be reproduced in Replit preview, explain and confirm behavior in a real browser.
+
+Notes:
+- Do NOT attempt to programmatically post (LinkedIn API/OAuth is needed).
