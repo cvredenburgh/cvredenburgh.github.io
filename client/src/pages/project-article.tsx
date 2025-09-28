@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Share2, Twitter, Mail, ArrowLeft, ExternalLink, Github, Check } from "lucide-react";
+import { Share2, Twitter, Mail, ArrowLeft, ExternalLink, Github, Check, Linkedin } from "lucide-react";
 import { getProjectBySlug, ProjectContent } from "@/lib/project-loader";
 
 export default function ProjectArticle() {
@@ -14,6 +14,7 @@ export default function ProjectArticle() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [copySuccess, setCopySuccess] = useState(false);
+  const [linkedinFallback, setLinkedinFallback] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchProject() {
@@ -43,7 +44,7 @@ export default function ProjectArticle() {
     fetchProject();
   }, [slug]);
 
-  const handleShare = async (method: 'copy' | 'twitter' | 'email') => {
+  const handleShare = async (method: 'copy' | 'twitter' | 'email' | 'linkedin') => {
     if (!project) return;
 
     const currentUrl = window.location.href;
@@ -77,6 +78,19 @@ export default function ProjectArticle() {
         break;
       case 'email':
         window.open(`mailto:?subject=${encodedTitle}&body=Check out this article: ${currentUrl}`);
+        break;
+      case 'linkedin':
+        const shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+        console.log('LinkedIn shareUrl=', shareUrl);
+        
+        // Use window.open synchronously as instructed
+        const newWindow = window.open(shareUrl, '_blank', 'noopener,noreferrer');
+        
+        // Add fallback UI if popup is blocked
+        if (!newWindow) {
+          console.log('LinkedIn popup blocked, showing fallback');
+          setLinkedinFallback(shareUrl);
+        }
         break;
     }
   };
@@ -266,6 +280,15 @@ export default function ProjectArticle() {
                   Share on X
                 </Button>
                 
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  onClick={() => handleShare('linkedin')}
+                  className="flex items-center gap-2"
+                >
+                  <Linkedin className="h-4 w-4" />
+                  Share on LinkedIn
+                </Button>
                 
                 <Button 
                   variant="outline" 
@@ -280,6 +303,47 @@ export default function ProjectArticle() {
             </div>
           </CardContent>
         </Card>
+
+        {/* LinkedIn fallback modal */}
+        {linkedinFallback && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <Card className="max-w-md mx-4">
+              <CardContent className="pt-6">
+                <h3 className="text-lg font-semibold mb-4">Share on LinkedIn</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-4">
+                  Your popup blocker prevented opening LinkedIn. Copy this link to share manually:
+                </p>
+                <div className="bg-gray-100 dark:bg-gray-800 p-3 rounded border text-sm break-all mb-4">
+                  {linkedinFallback}
+                </div>
+                <div className="flex gap-2">
+                  <Button 
+                    size="sm"
+                    onClick={async () => {
+                      try {
+                        await navigator.clipboard.writeText(linkedinFallback);
+                        setLinkedinFallback(null);
+                        setCopySuccess(true);
+                        setTimeout(() => setCopySuccess(false), 2000);
+                      } catch (err) {
+                        console.error('Failed to copy LinkedIn URL:', err);
+                      }
+                    }}
+                  >
+                    Copy Link
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    onClick={() => setLinkedinFallback(null)}
+                  >
+                    Close
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        )}
       </div>
     </>
   );
