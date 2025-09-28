@@ -174,16 +174,19 @@ export default function ProjectArticle() {
           Back to Projects
         </Button>
 
-        {/* Article header - minimal */}
-        <header className="mb-6">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            {project.title}
-          </h1>
-          
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-            <p className="text-lg text-gray-600 dark:text-gray-400">
-              {project.description}
-            </p>
+        {/* Article header - clean */}
+        <header className="mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
+            <div className="flex-1">
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.tags.map((tag) => (
+                  <Badge key={tag} variant="secondary" className="text-sm">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            </div>
             
             {/* Project links */}
             <div className="flex flex-wrap gap-2">
@@ -210,15 +213,6 @@ export default function ProjectArticle() {
                 </Button>
               )}
             </div>
-          </div>
-
-          {/* Tags */}
-          <div className="flex flex-wrap gap-2 mb-6">
-            {project.tags.map((tag) => (
-              <Badge key={tag} variant="secondary" className="text-sm">
-                {tag}
-              </Badge>
-            ))}
           </div>
         </header>
 

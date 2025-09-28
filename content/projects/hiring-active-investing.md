@@ -8,7 +8,7 @@ date: 2025-07-25
 
 🚧 Write-up in progress
 
-# Hiring is Active Investing: Reflecting on the Limits of Interviews & What To Do About It
+# Hiring is Active Investing: Reflecting on the Limits of Interviews
 
 ## The Team Is Every Organization's Most Important Product
 It may sound cliche in 2025, but it must be emphasized at the top that every organization's team is the most important product.  The team is its destiny.
