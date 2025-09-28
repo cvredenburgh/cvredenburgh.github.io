@@ -76,9 +76,8 @@ export default function ProjectArticle() {
         window.open(`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`, '_blank');
         break;
       case 'linkedin':
-        // Use LinkedIn's current working format - opens feed with share composer pre-filled
-        const articleTitle = project.title;
-        const linkedinShareUrl = `https://www.linkedin.com/feed/?shareActive=true&text=${encodeURIComponent(`${articleTitle} ${currentUrl}`)}`;
+        // Use LinkedIn's reliable share-offsite endpoint
+        const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`;
         console.log('LinkedIn share URL:', linkedinShareUrl);
         window.open(linkedinShareUrl, '_blank', 'noopener,noreferrer');
         break;
