@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Share2, Twitter, Linkedin, Mail, ArrowLeft, ExternalLink, Github } from "lucide-react";
+import { Share2, Twitter, Linkedin, Mail, ArrowLeft, ExternalLink, Github, Check } from "lucide-react";
 import { getProjectBySlug, ProjectContent } from "@/lib/project-loader";
 
 export default function ProjectArticle() {
@@ -13,6 +13,7 @@ export default function ProjectArticle() {
   const [project, setProject] = useState<ProjectContent | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [copySuccess, setCopySuccess] = useState(false);
 
   useEffect(() => {
     async function fetchProject() {
@@ -55,7 +56,8 @@ export default function ProjectArticle() {
       case 'copy':
         try {
           await navigator.clipboard.writeText(currentUrl);
-          // Optional: Show a toast notification that link was copied
+          setCopySuccess(true);
+          setTimeout(() => setCopySuccess(false), 2000);
           console.log('Link copied to clipboard!');
         } catch (err) {
           console.error('Failed to copy link:', err);
@@ -66,13 +68,16 @@ export default function ProjectArticle() {
           tempInput.select();
           document.execCommand('copy');
           document.body.removeChild(tempInput);
+          setCopySuccess(true);
+          setTimeout(() => setCopySuccess(false), 2000);
         }
         break;
       case 'twitter':
         window.open(`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`, '_blank');
         break;
       case 'linkedin':
-        window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}&summary=${encodedDescription}`, '_blank');
+        // Use LinkedIn's current sharing format
+        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`, '_blank');
         break;
       case 'email':
         window.open(`mailto:?subject=${encodedTitle}&body=Check out this article: ${currentUrl}`);
@@ -237,13 +242,22 @@ export default function ProjectArticle() {
               <div className="flex flex-wrap gap-2">
                 {/* Copy link button */}
                 <Button 
-                  variant="outline" 
+                  variant={copySuccess ? "default" : "outline"}
                   size="sm"
                   onClick={() => handleShare('copy')}
                   className="flex items-center gap-2"
                 >
-                  <Share2 className="h-4 w-4" />
-                  Copy Link
+                  {copySuccess ? (
+                    <>
+                      <Check className="h-4 w-4" />
+                      Copied!
+                    </>
+                  ) : (
+                    <>
+                      <Share2 className="h-4 w-4" />
+                      Copy Link
+                    </>
+                  )}
                 </Button>
                 
                 <Button 
