@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Share2, Twitter, Linkedin, Mail, ArrowLeft, ExternalLink, Github, Check } from "lucide-react";
+import { Share2, Twitter, Mail, ArrowLeft, ExternalLink, Github, Check } from "lucide-react";
 import { getProjectBySlug, ProjectContent } from "@/lib/project-loader";
 
 export default function ProjectArticle() {
@@ -43,7 +43,7 @@ export default function ProjectArticle() {
     fetchProject();
   }, [slug]);
 
-  const handleShare = async (method: 'copy' | 'twitter' | 'linkedin' | 'email') => {
+  const handleShare = async (method: 'copy' | 'twitter' | 'email') => {
     if (!project) return;
 
     const currentUrl = window.location.href;
@@ -74,12 +74,6 @@ export default function ProjectArticle() {
         break;
       case 'twitter':
         window.open(`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`, '_blank');
-        break;
-      case 'linkedin':
-        // Use LinkedIn's reliable share-offsite endpoint
-        const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`;
-        console.log('LinkedIn share URL:', linkedinShareUrl);
-        window.open(linkedinShareUrl, '_blank', 'noopener,noreferrer');
         break;
       case 'email':
         window.open(`mailto:?subject=${encodedTitle}&body=Check out this article: ${currentUrl}`);
@@ -272,15 +266,6 @@ export default function ProjectArticle() {
                   Share on X
                 </Button>
                 
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  onClick={() => handleShare('linkedin')}
-                  className="flex items-center gap-2"
-                >
-                  <Linkedin className="h-4 w-4" />
-                  LinkedIn
-                </Button>
                 
                 <Button 
                   variant="outline" 

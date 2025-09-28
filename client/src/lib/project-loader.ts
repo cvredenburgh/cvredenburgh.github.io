@@ -269,20 +269,28 @@ export async function getProjectBySlug(slug: string): Promise<ProjectContent | n
   try {
     // In production, load from projects.json first
     try {
+      console.log(`Loading project with slug: ${slug}`);
       const response = await fetch('/projects.json');
       if (response.ok) {
         const projects = await response.json();
+        console.log(`Loaded ${projects.length} projects from JSON, looking for slug: ${slug}`);
+        console.log('Available slugs:', projects.map((p: ProjectContent) => p.slug));
         const project = projects.find((p: ProjectContent) => p.slug === slug);
         if (project) {
           console.log(`Found project ${slug} from projects.json`);
           return project;
+        } else {
+          console.log(`Project with slug ${slug} not found in projects.json`);
         }
+      } else {
+        console.log('Failed to fetch projects.json:', response.status);
       }
     } catch (fetchError) {
-      console.log('Could not load from projects.json, trying API fallback');
+      console.log('Could not load from projects.json, trying API fallback:', fetchError);
     }
     
     // Fallback to API for development
+    console.log(`Trying API fallback for ${slug}`);
     return await processMarkdownProject(`${slug}.md`);
   } catch (error) {
     console.error(`Error loading project ${slug}:`, error);
