@@ -72,7 +72,7 @@ export default function ProjectArticle() {
         window.open(`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`, '_blank');
         break;
       case 'linkedin':
-        window.open(`https://www.linkedin.com/feed/update/urn:li:share:?text=${encodedTitle}%20${encodedUrl}`, '_blank');
+        window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}&summary=${encodedDescription}`, '_blank');
         break;
       case 'email':
         window.open(`mailto:?subject=${encodedTitle}&body=Check out this article: ${currentUrl}`);
