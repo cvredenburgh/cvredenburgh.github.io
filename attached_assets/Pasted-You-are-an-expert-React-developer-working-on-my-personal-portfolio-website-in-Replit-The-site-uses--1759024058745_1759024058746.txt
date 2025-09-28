@@ -1,0 +1,47 @@
+You are an expert React developer working on my personal portfolio website in Replit. The site uses React.js with TypeScript, Tailwind CSS, shadcn/ui, Vite, and deploys to GitHub Pages (chrisvred.com). Project articles are in content/projects/ as .md files, loaded via a custom frontmatter parser into projects.json during build. Navigation uses React Router (or wouter—confirm and use what's current), with dedicated pages at /projects/:slug rendering markdown content in ProjectArticle.tsx (or equivalent).
+The social sharing buttons at the bottom of article pages are broken for LinkedIn: clicking it opens LinkedIn but doesn't pre-fill a share post with the article URL (similar to how the X button works with https://twitter.com/intent/tweet?url={url}&text={title}). This is because the current implementation likely uses the deprecated /sharing/share-offsite/ endpoint, which fails due to LinkedIn changes. Do not break the working X, email, or copy link buttons (which now has "Copied!" feedback). Preserve all existing functionality: SEO metas, media embeds, theme toggle, contact form, deployment (CNAME, .replitignore, gh-pages).
+Fix only the LinkedIn button by updating it to the current working format: https://www.linkedin.com/feed/?shareActive=true&text=${encodeURIComponent(articleTitle + ' ' + currentUrl)}. This opens the feed with the share composer active and pre-fills the text with the title and URL. Test in preview to confirm it pops up the dialog (log in to LinkedIn in a new tab if needed for full testing).
+Implementation steps:
+
+Locate the Sharing Section: In ProjectArticle.tsx (or the article component), find the share buttons row (shadcn Button components in a flex div).
+Update LinkedIn Button:
+
+Keep it as a shadcn Button with icon (e.g., LinkedIn logo) and label "Share on LinkedIn".
+On click, use window.open(linkedinShareUrl, '_blank', 'noopener,noreferrer') to avoid popup blockers.
+Dynamically build the URL:
+
+const currentUrl = window.location.href;
+const articleTitle = frontmatter.title; // from parsed data
+const linkedinShareUrl = https://www.linkedin.com/feed/?shareActive=true&text=${encodeURIComponent(`${articleTitle} ${currentUrl})};`
+
+
+Add console.log(linkedinShareUrl) for debugging.
+Optional: Append &mini=true if the dialog needs to be compact, but test without first.
+
+
+Enhance for Better UX (Optional but Recommended):
+
+If Web Share API is available (navigator.share), include the URL, title, and text in the share data for native mobile sharing.
+Ensure the button has hover/focus states consistent with shadcn.
+
+
+No Changes to Other Buttons:
+
+X: Keep https://twitter.com/intent/tweet?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent(articleTitle)}
+Email: Keep mailto:?subject=${encodeURIComponent(articleTitle)}&body=${encodeURIComponent(Check out: ${currentUrl})}
+Copy: Keep existing clipboard logic with "Copied!" toast/feedback.
+
+
+
+Testing protocol (do this in Replit preview before finalizing):
+
+Run the app, navigate to an article page (e.g., /projects/my-project-slug).
+Click LinkedIn button: Should open new tab to LinkedIn feed with share composer pre-filled (text field shows title + URL). If not logged in, prompt to log in— that's expected.
+Verify X button still works (opens tweet composer).
+Test email: Opens default email client with pre-filled subject/body, no 403 errors.
+Test copy: Button shows "Copied!" feedback, and pasting elsewhere confirms the URL.
+Check console for errors/logs; ensure no build warnings.
+Test on mobile preview: Native share if available.
+Simulate deployment: Run npm run build, confirm dist/ includes updates, no routing/asset issues. Verify _redirects handles SPA.
+
+After testing and confirming the fix (LinkedIn now pre-fills the post), commit with message: "Fixed LinkedIn sharing to use feed/shareActive URL for reliable pre-filled posts". Provide a summary: What changed (code snippet of new URL), why it fixes (deprecated endpoint issue), and confirmation all tests passed. If issues (e.g., popup blocked), suggest user enable popups. Do not modify CNAME, .replitignore, or build scripts.
