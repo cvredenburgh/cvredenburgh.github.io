@@ -69,6 +69,3 @@ Weekley & Gier (1987) within McDaniel: r=0.48 for sales (case-analog), but n=104
 Bock, L. (2015). Work Rules! Insights from Inside Google That Will Transform How You Live and Lead.
 
 
-
-
-
