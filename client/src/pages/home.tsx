@@ -9,8 +9,8 @@ export default function Home() {
   const attributes = [
     "applied scientist",
     "skier",
-    "(unpaid) family cook",
     "builder", 
+    "(unpaid) family cook",
     "francophone",
     "husband",
     "sailor (kind of)",
