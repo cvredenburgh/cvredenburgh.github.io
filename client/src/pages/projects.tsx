@@ -49,9 +49,10 @@ export default function Projects() {
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
           Projects
         </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl">
-          Below are sample projects and reflections, all subject to ongoing edits. I have a backlog of projects from the past few years that relate to prior work and personal interests. I am in the process of completing research-style write ups in between current work and family obligations. This year, I aim to complete 4-5 of the below write ups. Thank you for your patience and please feel encouraged to reach out if you're interested in any of the topic areas!
-        </p>
+        <div className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl space-y-4">
+          <p>Below are sample projects and reflections, all subject to ongoing edits.</p>
+          <p>Note that, in 2025, I have a backlog of projects from the past few years that relate to prior work and personal interests. I am in the process of completing research-style write ups in between current work and family obligations (which includes managing a curious toddler!). This year, I aim to complete 4-5 of the below write ups. Thank you for your patience and please feel encouraged to reach out if you're interested in any of the topic areas!</p>
+        </div>
       </section>
 
       {loading && (
