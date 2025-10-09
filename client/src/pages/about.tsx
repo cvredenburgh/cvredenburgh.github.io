@@ -7,12 +7,12 @@ export default function About() {
     {
       src: "/me_white_sands.jpeg",
       alt: "Chris at White Sands",
-      caption: "Exploring White Sands National Park"
+      caption: "Exploring White Sands National Park."
     },
     {
       src: "/trapp_family_photo.jpg", 
       alt: "Trapp Family Photo",
-      caption: "Family time at Trapp Family Lodge"
+      caption: "Family time at the Trapp Family Lodge in Stowe, Vermont."
     }
   ];
 
