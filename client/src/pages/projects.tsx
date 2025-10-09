@@ -51,7 +51,7 @@ export default function Projects() {
         </h1>
         <div className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl space-y-4">
           <p>Below are sample projects and reflections, all subject to ongoing edits.</p>
-          <p>Note that, in 2025, I have a backlog of projects from the past few years with substantial content that lack polished summaries and write-ups.  I am in the process of completing research-style write ups in between current work and family obligations (which includes managing a curious toddler!). This year, I aim to complete 4-5 of the below write ups. Thank you for your patience and please feel encouraged to reach out if you're interested in any of the topic areas!</p>
+          <p>Note that, in 2025, I have a backlog of projects from the past few years with analytical content but that lack polished write-ups. So in between current work and family obligations (which includes managing a curious toddler!), I am in the process of completing research-style write ups. I aim to complete 4-5 of the below write ups this year. Thank you for your patience and please feel encouraged to reach out if you're interested in any of the topic areas!</p>
         </div>
       </section>
 

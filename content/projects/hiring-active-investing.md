@@ -29,20 +29,10 @@ It may sound cliche in 2025, but it must be emphasized at the top that every org
 
 ### Structured Interviews
 - Case studies also have very poor job performance predictability
-- Coding interviews (Google studies)
-
-
-(high false negative and near 0 predictability)
-Wingate, T. G., Bourdage, J. S., & Steel, P. (2024). Evaluating interview criterion-related validity for distinct constructs: A meta-analysis. International Journal of Selection and Assessment. DOI: 10.1111/ijsa.12494. (85 studies, n=30,000+; r=0.30 overall, but drops for contextual performance.)
-
-Weekley & Gier (1987) within McDaniel: r=0.48 for sales (case-analog), but n=104 limits generalizability. Critique: Tan, H. (2023). Do consulting case study interviews work? A deep dive. StrategyU Blog. https://strategyu.co/case-studies-deep-dive/
-
-
-(code interviews and brain teasers near 0 predictability, 10y of Google data)
-Bock, L. (2015). Work Rules! Insights from Inside Google That Will Transform How You Live and Lead.
+- Coding interviews (Google studies) (high false negative and near 0 predictability)
 
 ### False Negatives
-- Very, very few managers honestly track even basic hiring performance metrics; for example, False Negatives
+- Very, very few managers honestly track even basic hiring performance metrics; for example, False Negatives, because it's hard to do 
 Cite Rabois, others
 
 
@@ -54,19 +44,28 @@ Cite Rabois, others
 We are likely in the circumstance (systemically speaking, at least in the United States) of: 
 a) knowing the importance of selecting a great team and 
 b) not having effective tools to do so, but 
-c) electing to spend enormous resources on interviewing so as to at least *give the impression we are taking team development very seriously and instituting all the best (ineffective) practices.*
+c) electing to spend enormous resources on interviewing so as to at least *give the impression we are taking team development very seriously and instituting all the best (but ineffective) practices.*
 
 
 ### What Can Be Learned In Interview?
 
+
 #### What Interviews Incentivize
 
 (falsehoods and overclaims)
-Levashina, J., Hartwell, C. J., Morgeson, F. P., & Campion, M. A. (2014). The structured employment interview: Narrative and quantitative review. Personnel Psychology, 67(1), 241–293. (Meta on deception; ties to low r=0.18 for unstructured.)
-
 
 ## Takeaways
 
+
+## Appendix
+Levashina, J., Hartwell, C. J., Morgeson, F. P., & Campion, M. A. (2014). The structured employment interview: Narrative and quantitative review. Personnel Psychology, 67(1), 241–293. (Meta on deception; ties to low r=0.18 for unstructured.)
+
+Wingate, T. G., Bourdage, J. S., & Steel, P. (2024). Evaluating interview criterion-related validity for distinct constructs: A meta-analysis. International Journal of Selection and Assessment. DOI: 10.1111/ijsa.12494. (85 studies, n=30,000+; r=0.30 overall, but drops for contextual performance.)
+
+Weekley & Gier (1987) within McDaniel: r=0.48 for sales (case-analog), but n=104 limits generalizability. Critique: Tan, H. (2023). Do consulting case study interviews work? A deep dive. StrategyU Blog. https://strategyu.co/case-studies-deep-dive/
+
+(code interviews and brain teasers near 0 predictability, 10y of Google data)
+Bock, L. (2015). Work Rules! Insights from Inside Google That Will Transform How You Live and Lead.
 
 
 
