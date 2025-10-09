@@ -7,13 +7,14 @@ export default function About() {
     {
       src: "/me_white_sands.jpeg",
       alt: "Chris at White Sands",
-      caption: "Exploring White Sands National Park."
+      caption: "Exploring White Sands National Park.",
     },
     {
-      src: "/trapp_family_photo.jpg", 
+      src: "/trapp_family_photo.jpg",
       alt: "Trapp Family Photo",
-      caption: "Family time at the Trapp Family Lodge in Stowe, Vermont."
-    }
+      caption:
+        "Our Jindo dog, Coy, at the Trapp Family Lodge in Stowe, Vermont.",
+    },
   ];
 
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
@@ -54,7 +55,7 @@ export default function About() {
                 loading="lazy"
               />
             </div>
-            
+
             {/* Navigation arrows */}
             {photos.length > 1 && (
               <>
@@ -76,7 +77,7 @@ export default function About() {
                 </Button>
               </>
             )}
-            
+
             {/* Photo indicators */}
             {photos.length > 1 && (
               <div className="flex justify-center mt-3 space-x-2">
@@ -93,7 +94,7 @@ export default function About() {
                 ))}
               </div>
             )}
-            
+
             {/* Photo caption */}
             <p className="text-sm text-gray-500 dark:text-gray-400 text-center mt-2">
               {photos[currentPhotoIndex].caption}
@@ -104,43 +105,78 @@ export default function About() {
         {/* Content */}
         <div className="max-w-4xl">
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-              Hello! My name is Chris Vredenburgh. I currently live in Somerville, MA with my wife, Gloria, and son, Augustine. I work as VP of Artificial Intelligence & Product at a startup in the product development space.  Prior, I worked in e-commerce and the pharmaceutical industry building data, machine learning, and analytics solutions to optimize customer engagement and automate workflows.
+            Hello! My name is Chris Vredenburgh. I currently live in Somerville,
+            MA with my wife, Gloria, and son, Augustine. I work as VP of
+            Artificial Intelligence & Product at a startup in the product
+            development space. Prior, I worked in e-commerce and the
+            pharmaceutical industry building data, machine learning, and
+            analytics solutions to optimize customer engagement and automate
+            workflows.
           </p>
-          
+
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
             My interests are wide but interconnected, including:
           </p>
           <ul className="text-lg text-gray-600 dark:text-gray-400 mb-4 ml-6 space-y-1">
-              <li>• Causal statistics</li>
-              <li>• Cognitive science</li>
-              <li>• Machine learning</li>
-              <li>• Personalization systems</li>
-              <li>• Neuroscience</li>
-              <li>• Developmental processes</li>
-              <li>• Distributed systems & production</li>
-              <li>• Blockchain</li>
-              <li>• Meaning making</li>
+            <li>• Causal statistics</li>
+            <li>• Cognitive science</li>
+            <li>• Machine learning</li>
+            <li>• Personalization systems</li>
+            <li>• Neuroscience</li>
+            <li>• Developmental processes</li>
+            <li>• Distributed systems & production</li>
+            <li>• Blockchain</li>
+            <li>• Meaning making</li>
             <li>• How people can be productive together (collaboration)</li>
           </ul>
-          
+
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-            Outside of looking at computer screens, I enjoy skiing, sailing, running, reading, and biking.  And I generally prefer doing those things in places with seasons.
+            Outside of looking at computer screens, I enjoy skiing, sailing,
+            running, reading, and biking. And I generally prefer doing those
+            things in places with seasons.
           </p>
-          
+
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
             A few personal artifacts:
           </p>
           <ul className="text-lg text-gray-600 dark:text-gray-400 mb-4 ml-6 space-y-2">
-            <li>• I grew up in a southern Vermont town that, in my lifetime, went from a population &gt; 20k to &lt; 6.5k. So I know a bit about what it's like to live through economic decline and how impactful it is to people's lives.</li>
-            <li>• My interdisciplinary dissertation identified novel biological, cognitive, and environmental predictors of free-flowing human collaboration via wearables and time series modeling. (At some point, I may add a summary and additional outputs!)</li>
-            <li>• I lived and worked in Montpelier, France for a year prior to grad school. On my time off, I biked around France and northern Spain.</li>
-            <li>• During the Bitcoin crash in 2017, I read the Bitcoin white paper and began purchasing Bitcoin and crypto assets. I have largely held since and remain intrigued by the potential of blockchain applications.</li>
-          <li>• I believe in human agency and systems with strong skin-in-the-game, and am skeptical of systems that lack true stake for participants.</li>
-          <li>• I am a lifelong lover of skiing - a former freestyle skier who now enjoys skiing the glades and backcountry!</li>
+            <li>
+              • I grew up in a southern Vermont town that, in my lifetime, went
+              from a population &gt; 20k to &lt; 6.5k. So I know a bit about
+              what it's like to live through economic decline and how impactful
+              it is to people's lives.
+            </li>
+            <li>
+              • My interdisciplinary dissertation identified novel biological,
+              cognitive, and environmental predictors of free-flowing human
+              collaboration via wearables and time series modeling. (At some
+              point, I may add a summary and additional outputs!)
+            </li>
+            <li>
+              • I lived and worked in Montpelier, France for a year prior to
+              grad school. On my time off, I biked around France and northern
+              Spain.
+            </li>
+            <li>
+              • During the Bitcoin crash in 2017, I read the Bitcoin white paper
+              and began purchasing Bitcoin and crypto assets. I have largely
+              held since and remain intrigued by the potential of blockchain
+              applications.
+            </li>
+            <li>
+              • I believe in human agency and systems with strong
+              skin-in-the-game, and am skeptical of systems that lack true stake
+              for participants.
+            </li>
+            <li>
+              • I am a lifelong lover of skiing - a former freestyle skier who
+              now enjoys skiing the glades and backcountry!
+            </li>
           </ul>
-          
+
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            As time permits, I will be adding projects of interest and reflections on this site.
+            As time permits, I will be adding projects of interest and
+            reflections on this site.
           </p>
         </div>
       </section>
