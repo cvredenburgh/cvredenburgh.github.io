@@ -1,5 +1,12 @@
 import fs from 'fs';
 import path from 'path';
+import { marked } from 'marked';
+
+// Configure marked for better rendering
+marked.setOptions({
+  breaks: false,
+  gfm: true
+});
 
 // Simple frontmatter parser
 function parseFrontmatter(content) {
@@ -59,20 +66,11 @@ function buildProjectsJson() {
       
       const slug = filename.replace(/\.md$/, '');
       
-      // Simple markdown to HTML conversion
-      const htmlContent = markdownContent
-        .replace(/### (.+)/g, '<h3>$1</h3>')
-        .replace(/## (.+)/g, '<h2>$1</h2>')
-        .replace(/# (.+)/g, '<h1>$1</h1>')
-        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-        .replace(/\*(.+?)\*/g, '<em>$1</em>')
-        .replace(/`([^`]+)`/g, '<code>$1</code>')
-        .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img alt="$1" src="$2" class="max-w-full h-auto" />')
-        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-blue-600 hover:underline">$1</a>')
-        .replace(/\n\n/g, '</p><p>')
-        .replace(/\n/g, '<br>');
+      // Convert markdown to HTML using marked library
+      const htmlContent = marked(markdownContent);
       
-      const wrappedHtml = `<div class="prose max-w-none"><p>${htmlContent}</p></div>`;
+      // Wrap in prose container for Tailwind Typography
+      const wrappedHtml = `<div class="prose prose-lg max-w-none dark:prose-invert">${htmlContent}</div>`;
       
       const project = {
         id: slug,
