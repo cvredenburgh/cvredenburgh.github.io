@@ -1,0 +1,33 @@
+Error in user YAML: (<unknown>): mapping values are not allowed in this context at line 1 column 34
+— means the YAML front-matter at the top of your file has a syntax issue. YAML thinks you’re trying to start a key–value mapping in the wrong place — usually because of a missing quote, a colon (:) inside an unquoted string, or bad indentation.
+
+In your case, the problem is almost certainly this line:
+
+yaml
+Copy code
+description: Similar to active investing, a wide body of research (both academic and corporate) shows hiring managers rarely outperform the index (chance). For example, case study evaluations and coding evaluation scores consistently show very poor predictability for later job performance. I explore what productive interview cycles could instead focus on (for both sides).
+YAML interprets the colon in "active investing, a wide body..." correctly,
+but the colon in (chance). For example, case study evaluations and coding evaluation scores consistently show very poor predictability... can confuse the parser if there’s no quoting around the string — because colons (:) signal new key–value pairs unless the value is in quotes.
+
+✅ Fix: Quote the description value (single or double quotes are fine):
+
+yaml
+Copy code
+---
+title: "Hiring is Active Investing: Reflecting on the Limits of Interviews"
+description: "Similar to active investing, a wide body of research (both academic and corporate) shows hiring managers rarely outperform the index (chance). For example, case study evaluations and coding evaluation scores consistently show very poor predictability for later job performance. I explore what productive interview cycles could instead focus on (for both sides)."
+tags: ["hiring", "talent management", "interviewing"]
+githubUrl: "https://github.com/cvredenburgh/hiring-active-investing"
+date: 2025-07-25
+---
+Summary of causes for this YAML error:
+
+Unquoted colons (:) inside string values
+
+Unescaped special characters (like # or &)
+
+Incorrect indentation (mixing spaces and tabs)
+
+Multiline text without a block indicator (| or >)
+
+Once you quote the description (and optionally other string values), the error will go away.

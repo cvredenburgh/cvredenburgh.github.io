@@ -1,8 +1,8 @@
 ---
-title: Regional Contrastive Learning for Fine-grained Product Representations
-description: How can we teach AI to better understand the subtle differences in product design—like the cut of a collar or the curve of a sole? This project builds on regional contrastive learning methods (E² CLiP) to refine multimodal product representations, experimenting with token alignment, pruning, and alternative transformer architectures (e.g. wavelet-based) to capture fine-grained product features. Then, I demonstrate how these representations can be leveraged for generative optimization as well as analytical outputs.
+title: "Regional Contrastive Learning for Fine-grained Product Representations"
+description: "How can we teach AI to better understand the subtle differences in product design—like the cut of a collar or the curve of a sole? This project builds on regional contrastive learning methods (E² CLiP) to refine multimodal product representations, experimenting with token alignment, pruning, and alternative transformer architectures (e.g. wavelet-based) to capture fine-grained product features. Then, I demonstrate how these representations can be leveraged for generative optimization as well as analytical outputs."
 tags: ["AI", "contrastive learning", "CLiP", "vision-language models", "product concept evaluation", "multimodal", "representation learning"] 
-githubUrl: https://github.com/cvredenburgh/multimodal-concept-evaluation 
+githubUrl: "https://github.com/cvredenburgh/multimodal-concept-evaluation"
 date: 2025-07-25
 ---
 
