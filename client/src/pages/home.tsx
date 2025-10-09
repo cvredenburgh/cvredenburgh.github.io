@@ -8,16 +8,16 @@ export default function Home() {
   
   const attributes = [
     "applied scientist",
-    "builder", 
+    "skier",
     "(unpaid) family cook",
+    "builder", 
     "francophone",
     "husband",
     "sailor (kind of)",
     "father",
     "reader & thinker",
     "dog & cat appreciator",
-    "trail runner",
-    "skier"
+    "trail runner"
   ];
 
   useEffect(() => {

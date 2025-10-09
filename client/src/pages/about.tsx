@@ -104,7 +104,7 @@ export default function About() {
         {/* Content */}
         <div className="max-w-4xl">
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-              Hello! My name is Chris Vredenburgh. I currently live in Somerville, MA with my wife, Gloria, and son, Augustine. I work as VP of Artificial Intelligence & Product at a startup in the product development space.  Prior, I worked in e-commerce and the pharmaceutical industry building data, machine learning, and analytics solutions to optimize customer engagement and automate operations.
+              Hello! My name is Chris Vredenburgh. I currently live in Somerville, MA with my wife, Gloria, and son, Augustine. I work as VP of Artificial Intelligence & Product at a startup in the product development space.  Prior, I worked in e-commerce and the pharmaceutical industry building data, machine learning, and analytics solutions to optimize customer engagement and automate workflows.
           </p>
           
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
