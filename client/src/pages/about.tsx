@@ -107,7 +107,7 @@ export default function About() {
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
             Hello! My name is Chris Vredenburgh. I currently live in Somerville,
             MA with my wife, Gloria, and son, Augustine. I work as VP of
-            Artificial Intelligence at a startup in the defense acquisition space. Prior, I built data and AI solutions in product development, e-commerce, and the pharmaceutical industry.
+            Artificial Intelligence at a startup in the defense acquisition space focused on AI-enabled logistics and MRO (maintenance, repair, and overhaul). Prior, I built data and AI solutions in product development, e-commerce, and the pharmaceutical industry.
           </p>
 
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
